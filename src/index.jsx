@@ -10,7 +10,7 @@ class MyFlixApplication extends React.Component {
     render() {
         return (
             <div className="my-flix">
-                <div>Good morning TEST</div>
+                <div>Good morning TEST this app edition now real time edits</div>
             </div>
         );
     }

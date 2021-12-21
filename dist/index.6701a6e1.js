@@ -964,7 +964,7 @@ class MyFlixApplication extends _reactDefault.default.Component {
                     lineNumber: 13
                 },
                 __self: this,
-                children: "Good morning TEST"
+                children: "Good morning TEST this app edition now real time edits"
             })
         }));
     }
