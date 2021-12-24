@@ -22768,7 +22768,8 @@ class MainView extends _reactDefault.default.Component {
                     Description: 'desc3...',
                     ImagePath: '...'
                 }
-            ]
+            ],
+            selectedMovie: null
         };
     }
     render() {
@@ -22777,7 +22778,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/MainView/main-view.jsx",
-                lineNumber: 17
+                lineNumber: 18
             },
             __self: this,
             children: " The list is empty!"
@@ -22786,14 +22787,14 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/MainView/main-view.jsx",
-                lineNumber: 20
+                lineNumber: 21
             },
             __self: this,
             children: movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                     movie: movie,
                     __source: {
                         fileName: "src/components/MainView/main-view.jsx",
-                        lineNumber: 21
+                        lineNumber: 22
                     },
                     __self: this
                 }, movie._id)
