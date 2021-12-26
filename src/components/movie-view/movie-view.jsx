@@ -2,8 +2,8 @@ import React from 'react';
 
 export class MovieView extends React.Component {
     render() {
-        const { movieData } = this.props;
-        return (<div className="MovieView">
+        const { movie } = this.props;
+        return (<div className="movie-view">
             <div className="movie-poster">
                 <img src={movie.ImagePath} />
             </div>
