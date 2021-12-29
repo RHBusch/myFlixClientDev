@@ -26,8 +26,6 @@ export class MainView extends React.Component {    // The following code actuall
     render() { //The render () function is what returns the visual state of the component. Only one root element allowed. 
         const { movies, selectedMovie } = this.state;
 
-        if (selectedMovie) return <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.SelectedMovie(newSelectedMovie) }} />;
-
         if (movies.length === 0) return <div className="main-view"> The list is empty!</div>
 
         return ( //Maybe add a react fragment here? 
