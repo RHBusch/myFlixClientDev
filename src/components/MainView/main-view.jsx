@@ -11,8 +11,10 @@ export class MainView extends React.Component {    // The following code actuall
     constructor() { // Constructor code is executed before render code - setting up the framework for the render. 
         super() //Calling React.Component 
         this.state = {
-            movies: [ //creating an empty object -movies- with an array to hold data. 
-
+            movies: [ //creating an object -movies- with an array holding data. 
+                { _id: 1, Title: 'Inception', Description: 'test description', ImagePath: 'test' },
+                { _id: 2, Title: 'The Shawshank Redemption', Description: 'test description', ImagePath: 'test' },
+                { _id: 3, Title: 'Gladiator', Description: 'test description', ImagePath: 'test' }
             ],
             selectedMovie: null
         }
