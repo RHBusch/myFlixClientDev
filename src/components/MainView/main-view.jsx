@@ -2,8 +2,9 @@ import React from 'react'; // Making React available to create components.
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import axios from 'axios';
+import inceptionPlaceholder from '../../../img/cat2.png'
+import shawshankPlaceholder from '../../../img/placekitten.png'
 
-let imgPath = './img/'
 
 
 //Exposing MainView componenet for other future components. 
@@ -12,8 +13,8 @@ export class MainView extends React.Component {    // The following code actuall
         super() //Calling React.Component 
         this.state = {
             movies: [ //creating an object -movies- with an array holding data. 
-                { _id: 1, Title: 'Inception', Description: 'test description', ImagePath: imgPath + 'placekitten.jpeg' },
-                { _id: 2, Title: 'The Shawshank Redemption', Description: 'test description', ImagePath: 'test' },
+                { _id: 1, Title: 'Inception', Description: 'test descriptions', ImagePath: inceptionPlaceholder },
+                { _id: 2, Title: 'The Shawshank Redemption', Description: 'test description', ImagePath: shawshankPlaceholder },
                 { _id: 3, Title: 'Gladiator', Description: 'test description', ImagePath: 'test' }
             ],
             selectedMovie: null

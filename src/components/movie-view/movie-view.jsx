@@ -23,6 +23,7 @@ export class MovieView extends React.Component {
             </div>
             <button onClick={() => { onBackClick(null) }}>Back</button>
         </div>
-        )// ^^^ The onBackClick button above will need to have new code added to actually point it in a direction. 
+            // ^^^ The onBackClick button above will need to have new code added to actually point it in a direction. 
+        )
     }
 }
