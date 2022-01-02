@@ -2,8 +2,9 @@ import React from 'react'; // Making React available to create components.
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import axios from 'axios';
-import inceptionPlaceholder from '../../../img/cat2.png'
-import shawshankPlaceholder from '../../../img/placekitten.png'
+import theBigSickPlaceholder from '../../../img/posterBigSick.png'
+import statenIslandPlaceholder from '../../../img/posterStatenIsland.png'
+import hobbitPlaceholder from '../../../img/posterHobbit.png'
 
 
 
@@ -13,14 +14,13 @@ export class MainView extends React.Component {    // The following code actuall
         super() //Calling React.Component 
         this.state = {
             movies: [ //creating an object -movies- with an array holding data. 
-                { _id: 1, Title: 'Inception', Description: 'test descriptions', ImagePath: inceptionPlaceholder },
-                { _id: 2, Title: 'The Shawshank Redemption', Description: 'test description', ImagePath: shawshankPlaceholder },
-                { _id: 3, Title: 'Gladiator', Description: 'test description', ImagePath: 'test' }
+                { _id: 1, Title: 'The Big Sick', Description: 'test descriptions', ImagePath: theBigSickPlaceholder },
+                { _id: 2, Title: 'The King of Staten Island', Description: 'test description', ImagePath: statenIslandPlaceholder },
+                { _id: 3, Title: 'The Hobbit', Description: 'test description', ImagePath: hobbitPlaceholder }
             ],
             selectedMovie: null
         }
     }
-
 
     setSelectedMovie(newSelectedMovie) {
         this.setState({

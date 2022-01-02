@@ -1,7 +1,7 @@
 import React from 'react';
 
-let tempHeightStyle = {
-    height: '500px'
+let moviePosterStyle = {
+    height: '300px',
 };
 
 
@@ -11,7 +11,7 @@ export class MovieView extends React.Component {
         const { movie, onBackClick } = this.props;
         return (<div className="movie-view">
             <div className="movie-poster">
-                <img src={movie.ImagePath} style={tempHeightStyle} />
+                <img src={movie.ImagePath} style={moviePosterStyle} />
             </div>
             <div className="movie-title">
                 <span className="label"> Title:</span>

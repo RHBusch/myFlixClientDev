@@ -22748,10 +22748,12 @@ var _movieCard = require("../movie-card/movie-card");
 var _movieView = require("../movie-view/movie-view");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _cat2Png = require("../../../img/cat2.png");
-var _cat2PngDefault = parcelHelpers.interopDefault(_cat2Png);
-var _placekittenPng = require("../../../img/placekitten.png");
-var _placekittenPngDefault = parcelHelpers.interopDefault(_placekittenPng);
+var _posterBigSickPng = require("../../../img/posterBigSick.png");
+var _posterBigSickPngDefault = parcelHelpers.interopDefault(_posterBigSickPng);
+var _posterStatenIslandPng = require("../../../img/posterStatenIsland.png");
+var _posterStatenIslandPngDefault = parcelHelpers.interopDefault(_posterStatenIslandPng);
+var _posterHobbitPng = require("../../../img/posterHobbit.png");
+var _posterHobbitPngDefault = parcelHelpers.interopDefault(_posterHobbitPng);
 class MainView extends _reactDefault.default.Component {
     constructor(){
         super() //Calling React.Component 
@@ -22760,21 +22762,21 @@ class MainView extends _reactDefault.default.Component {
             movies: [
                 {
                     _id: 1,
-                    Title: 'Inception',
+                    Title: 'The Big Sick',
                     Description: 'test descriptions',
-                    ImagePath: _cat2PngDefault.default
+                    ImagePath: _posterBigSickPngDefault.default
                 },
                 {
                     _id: 2,
-                    Title: 'The Shawshank Redemption',
+                    Title: 'The King of Staten Island',
                     Description: 'test description',
-                    ImagePath: _placekittenPngDefault.default
+                    ImagePath: _posterStatenIslandPngDefault.default
                 },
                 {
                     _id: 3,
-                    Title: 'Gladiator',
+                    Title: 'The Hobbit',
                     Description: 'test description',
-                    ImagePath: 'test'
+                    ImagePath: _posterHobbitPngDefault.default
                 }
             ],
             selectedMovie: null
@@ -22834,7 +22836,7 @@ class MainView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","axios":"iYoWk","@parcel/transformer-js/src/esmodule-helpers.js":"fp0v4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cG54J","../../../img/cat2.png":"9TMeB","../../../img/placekitten.png":"jikdu"}],"6EiBJ":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","axios":"iYoWk","@parcel/transformer-js/src/esmodule-helpers.js":"fp0v4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cG54J","../../../img/posterBigSick.png":"kPBzo","../../../img/posterStatenIsland.png":"bSser","../../../img/posterHobbit.png":"pH7UM"}],"6EiBJ":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4249 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23037,8 +23039,8 @@ parcelHelpers.export(exports, "MovieView", ()=>MovieView
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-let tempHeightStyle = {
-    height: '500px'
+let moviePosterStyle = {
+    height: '300px'
 };
 class MovieView extends _reactDefault.default.Component {
     render() {
@@ -23060,7 +23062,7 @@ class MovieView extends _reactDefault.default.Component {
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
                         src: movie.ImagePath,
-                        style: tempHeightStyle,
+                        style: moviePosterStyle,
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
                             lineNumber: 14
@@ -24706,8 +24708,8 @@ module.exports = CancelToken;
     return typeof payload === 'object' && payload.isAxiosError === true;
 };
 
-},{}],"9TMeB":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "cat2.f2060fb1.png";
+},{}],"kPBzo":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "posterBigSick.65db4aee.png";
 
 },{"./helpers/bundle-url":"d5rG8"}],"d5rG8":[function(require,module,exports) {
 "use strict";
@@ -24744,8 +24746,11 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"jikdu":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "placekitten.a737d149.png";
+},{}],"bSser":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "posterStatenIsland.50cbad39.png";
+
+},{"./helpers/bundle-url":"d5rG8"}],"pH7UM":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "posterHobbit.7320b607.png";
 
 },{"./helpers/bundle-url":"d5rG8"}],"jUTZ8":[function() {},{}]},["djUTW","3R0oj","dLPEP"], "dLPEP", "parcelRequirec6c8")
 
