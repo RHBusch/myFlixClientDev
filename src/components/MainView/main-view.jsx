@@ -14,12 +14,23 @@ export class MainView extends React.Component {    // The following code actuall
         super() //Calling React.Component 
         this.state = {
             movies: [ //creating an object -movies- with an array holding data. 
-                { _id: 1, Title: 'The Big Sick', Description: 'test descriptions', ImagePath: theBigSickPlaceholder },
-                { _id: 2, Title: 'The King of Staten Island', Description: 'test description', ImagePath: statenIslandPlaceholder },
-                { _id: 3, Title: 'The Hobbit', Description: 'test description', ImagePath: hobbitPlaceholder }
+                /* { _id: 1, Title: 'The Big Sick', Description: 'test descriptions', ImagePath: theBigSickPlaceholder },
+                 { _id: 2, Title: 'The King of Staten Island', Description: 'test description', ImagePath: statenIslandPlaceholder },
+                 { _id: 3, Title: 'The Hobbit', Description: 'test description', ImagePath: hobbitPlaceholder }*/
             ],
             selectedMovie: null
         }
+    }
+    componentDidMount() {
+        axios.get('https://busch-movie-api.herokuapp.com/movies')
+            .then(response => {
+                this.setState({
+                    movies: response.data
+                });
+            })
+            .catch(error => {
+                console.log(error);
+            });
     }
 
     setSelectedMovie(newSelectedMovie) {
