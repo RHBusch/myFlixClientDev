@@ -23886,64 +23886,89 @@ function LoginView(props) {
         console.log(username, password);
         props.onLoggedIn(username);
     };
-    return(/*#__PURE__*/ _jsxRuntime.jsxs("form", {
+    return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
             lineNumber: 14
         },
         __self: this,
         children: [
-            /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+            /*#__PURE__*/ _jsxRuntime.jsxs("form", {
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
                     lineNumber: 15
                 },
                 __self: this,
                 children: [
-                    "Username:",
-                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
-                        type: "text",
-                        value: username,
-                        onChange: (e)=>setUsername(e.target.value)
-                        ,
+                    /*#__PURE__*/ _jsxRuntime.jsxs("label", {
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 17
+                            lineNumber: 16
                         },
-                        __self: this
+                        __self: this,
+                        children: [
+                            "Username:",
+                            /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                                type: "text",
+                                value: username,
+                                onChange: (e)=>setUsername(e.target.value)
+                                ,
+                                __source: {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 18
+                                },
+                                __self: this
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+                        __source: {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 20
+                        },
+                        __self: this,
+                        children: [
+                            "Password:",
+                            /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                                type: "password",
+                                value: password,
+                                onChange: (e)=>setPassword(e.target.value)
+                                ,
+                                __source: {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 22
+                                },
+                                __self: this
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                        type: "submit",
+                        onClick: handleSubmit,
+                        __source: {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 24
+                        },
+                        __self: this,
+                        children: "Submit"
                     })
                 ]
             }),
-            /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+            /*#__PURE__*/ _jsxRuntime.jsx("br", {
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 19
+                    lineNumber: 26
                 },
-                __self: this,
-                children: [
-                    "Password:",
-                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
-                        type: "password",
-                        value: password,
-                        onChange: (e)=>setPassword(e.target.value)
-                        ,
-                        __source: {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 21
-                        },
-                        __self: this
-                    })
-                ]
+                __self: this
             }),
             /*#__PURE__*/ _jsxRuntime.jsx("button", {
-                type: "submit",
-                onClick: handleSubmit,
+                type: "button",
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 23
+                    lineNumber: 27
                 },
                 __self: this,
-                children: "Submit"
+                children: "Click here to register as a new user!"
             })
         ]
     }));
