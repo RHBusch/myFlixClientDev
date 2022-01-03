@@ -1,6 +1,7 @@
 import React from 'react'; // Making React available to create components. 
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
+import { LoginView } from '../login-view/login-view';
 import axios from 'axios';
 import theBigSickPlaceholder from '../../../img/posterBigSick.png'
 import statenIslandPlaceholder from '../../../img/posterStatenIsland.png'
@@ -18,7 +19,8 @@ export class MainView extends React.Component {    // The following code actuall
                  { _id: 2, Title: 'The King of Staten Island', Description: 'test description', ImagePath: statenIslandPlaceholder },
                  { _id: 3, Title: 'The Hobbit', Description: 'test description', ImagePath: hobbitPlaceholder }*/
             ],
-            selectedMovie: null
+            selectedMovie: null,
+            user: null
         }
     }
     componentDidMount() {
@@ -33,14 +35,23 @@ export class MainView extends React.Component {    // The following code actuall
             });
     }
 
-    setSelectedMovie(newSelectedMovie) {
+    setSelectedMovie(movie) {
         this.setState({
-            selectedMovie: newSelectedMovie
-        })
+            selectedMovie: movie
+        });
+    }
+
+    onLoggedIn(user) {
+        this.setState({
+            user
+        });
     }
 
     render() { //The render () function is what returns the visual state of the component. Only one root element allowed. 
-        const { movies, selectedMovie } = this.state;
+        const { movies, selectedMovie, user } = this.state;
+
+        if (!user) return <LoginView onLoggedIn={
+            user => this.onLoggedIn(user)} />
 
         if (movies.length === 0) return <div className="main-view"> The list is empty!</div>
 
