@@ -38,4 +38,4 @@ export function RegistrationView(props) {
             <button type="submit" onClick={handleSubmit}>Submit</button>
         </form>
     );
-}
+}//All of the above are included in the documentation for the myFlix api completed in exercise two. Any updates must be made both here and there. 

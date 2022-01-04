@@ -9,7 +9,7 @@ export function LoginView(props) {
         console.log(username, password);
         props.onLoggedIn(username);
     }
-    //Adding the appropriate information for users to login. 
+    //Adding the appropriate information for users to login - username and password. 
     return (
         <div>
             <form>
@@ -28,3 +28,4 @@ export function LoginView(props) {
         </div>
     );
 }
+//^^^ The above button will also include a function in the next exercise to direct users without a login to the registration view. 

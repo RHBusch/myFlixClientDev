@@ -23872,7 +23872,8 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 // setting state of username and password as empty by default
 parcelHelpers.export(exports, "LoginView", ()=>LoginView
-);
+) //^^^ The above button will also include a function in the next exercise to direct users without a login to the registration view. 
+;
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
@@ -23886,7 +23887,7 @@ function LoginView(props) {
         console.log(username, password);
         props.onLoggedIn(username);
     };
-    //Adding the appropriate information for users to login. 
+    //Adding the appropriate information for users to login - username and password. 
     return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
@@ -23995,7 +23996,8 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 // setting state of username and password as empty by default
 parcelHelpers.export(exports, "RegistrationView", ()=>RegistrationView
-);
+) //All of the above are included in the documentation for the myFlix api completed in exercise two. Any updates must be made both here and there. 
+;
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
