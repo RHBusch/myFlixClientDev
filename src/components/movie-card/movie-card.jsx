@@ -14,6 +14,21 @@ MovieCard.propTypes = {
         Title: PropTypes.string.isRequired, //movie object may contain a title --- if so, must be a string.
         Description: PropTypes.string.isRequired,
         ImagePath: PropTypes.string.isRequired,
+        Genre: PropTypes.shape({
+            Name: PropTypes.string.isRequired,
+            Description: PropTypes.string.isRequired,
+        }),
+        Ratings: PropTypes.shape({
+            IMDB: PropTypes.number.isRequired,
+            RottenTomatoes: PropTypes.number.isRequired,
+        }),
+        Director: PropTypes.shape({
+            Name: PropTypes.string.isRequired,
+            Bio: PropTypes.string.isRequired,
+            Birth: PropTypes.number.isRequired,
+            Death: PropTypes.number.isRequired,
+        }),
+        Featured: PropTypes.bool.isRequired
     }).isRequired,
     onMovieClick: PropTypes.func.isRequired //props object must contain onMovieclick and it must be a function
 };

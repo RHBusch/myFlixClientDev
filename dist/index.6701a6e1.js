@@ -22880,7 +22880,22 @@ MovieCard.propTypes = {
     movie: _propTypesDefault.default.shape({
         Title: _propTypesDefault.default.string.isRequired,
         Description: _propTypesDefault.default.string.isRequired,
-        ImagePath: _propTypesDefault.default.string.isRequired
+        ImagePath: _propTypesDefault.default.string.isRequired,
+        Genre: _propTypesDefault.default.shape({
+            Name: _propTypesDefault.default.string.isRequired,
+            Description: _propTypesDefault.default.string.isRequired
+        }),
+        Ratings: _propTypesDefault.default.shape({
+            IMDB: _propTypesDefault.default.number.isRequired,
+            RottenTomatoes: _propTypesDefault.default.number.isRequired
+        }),
+        Director: _propTypesDefault.default.shape({
+            Name: _propTypesDefault.default.string.isRequired,
+            Bio: _propTypesDefault.default.string.isRequired,
+            Birth: _propTypesDefault.default.number.isRequired,
+            Death: _propTypesDefault.default.number.isRequired
+        }),
+        Featured: _propTypesDefault.default.bool.isRequired
     }).isRequired,
     onMovieClick: _propTypesDefault.default.func.isRequired //props object must contain onMovieclick and it must be a function
 };
