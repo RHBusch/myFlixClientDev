@@ -9,7 +9,7 @@ export function LoginView(props) {
         console.log(username, password);
         props.onLoggedIn(username);
     }
-
+    //Adding the appropriate information for users to login. 
     return (
         <div>
             <form>

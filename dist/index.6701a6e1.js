@@ -23886,6 +23886,7 @@ function LoginView(props) {
         console.log(username, password);
         props.onLoggedIn(username);
     };
+    //Adding the appropriate information for users to login. 
     return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
