@@ -14,10 +14,14 @@ export function LoginView(props) {
     }
 
     const handleClick = () => { toRegister = false }; // Creating a const variable "handleClick" that calls a function to declare toRegister false. 
+    
+    /* If toRegister = false, return the RegistrationView. In my mind, this is similar to the code in the MainView
+                if (!user) return <LoginView onLoggedIn={
+                    user => this.onLoggedIn(user)} /> */
 
-    if (toRegister = false) return <RegistrationView /> /* If toRegister = false, return the RegistrationView. In my mind, this is similar to the code in the MainView
-                                                        if (!user) return <LoginView onLoggedIn={
-                                                         user => this.onLoggedIn(user)} /> */
+    if (toRegister = false) return <RegistrationView /> 
+    
+    
     return (
         <div>
             <form>
@@ -32,7 +36,9 @@ export function LoginView(props) {
                 <button type="submit" onClick={handleSubmit}>Submit</button>
             </form>
             <br></br>
+            
             //Calling handleClick for onClick, thus setting the value of toRegister to false and returning the RegistrationView.
+            
             <button type="submit" onClick={handleClick}> Take me to the registration page!</button>
         </div>
     );
