@@ -1,0 +1,45 @@
+import React, { useState } from 'react';
+import { render } from 'react-dom';
+import { RegistrationView } from '../registration-view/registration-view';
+// setting state of username and password as empty by default
+export function LoginView(props) {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [toRegister] = useState('');  // Emptying the use state for toRegister to create a clean slate. 
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(username, password);
+        props.onLoggedIn(username);
+    }
+
+    const handleClick = () => { toRegister = false }; // Creating a const variable "handleClick" that calls a function to declare toRegister false. 
+    
+    /* If toRegister = false, return the RegistrationView. In my mind, this is similar to the code in the MainView
+                if (!user) return <LoginView onLoggedIn={
+                    user => this.onLoggedIn(user)} /> */
+
+    if (toRegister = false) return <RegistrationView /> 
+    
+    
+    return (
+        <div>
+            <form>
+                <label>
+                    Username:
+                    <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
+                </label>
+                <label>
+                    Password:
+                    <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
+                </label>
+                <button type="submit" onClick={handleSubmit}>Submit</button>
+            </form>
+            <br></br>
+            
+            //Calling handleClick for onClick, thus setting the value of toRegister to false and returning the RegistrationView.
+            
+            <button type="submit" onClick={handleClick}> Take me to the registration page!</button>
+        </div>
+    );
+}
