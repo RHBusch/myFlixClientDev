@@ -7,6 +7,7 @@ import axios from 'axios';
 import theBigSickPlaceholder from '../../../img/posterBigSick.png'
 import statenIslandPlaceholder from '../../../img/posterStatenIsland.png'
 import hobbitPlaceholder from '../../../img/posterHobbit.png'
+import { render } from 'react-dom';
 
 
 
@@ -21,7 +22,8 @@ export class MainView extends React.Component {    // The following code actuall
                  { _id: 3, Title: 'The Hobbit', Description: 'test description', ImagePath: hobbitPlaceholder }*/
             ],
             selectedMovie: null,
-            user: null
+            user: null,
+            register: 'false'
         }
     }
     componentDidMount() {
@@ -42,17 +44,37 @@ export class MainView extends React.Component {    // The following code actuall
         });
     }
 
+    /*onRegistration(register) {
+        this.setState({
+            register,
+        });
+    }*/
+
     onLoggedIn(user) {
         this.setState({
             user
         });
     }
 
-    render() { //The render () function is what returns the visual state of the component. Only one root element allowed. 
-        const { movies, selectedMovie, user } = this.state;
+    /* onRegister(registration){
+         this.setState({
+             register: 'true'
+         });
+         }*/
 
-        if (!user) return <LoginView onLoggedIn={
-            user => this.onLoggedIn(user)} />
+
+
+    render() { //The render () function is what returns the visual state of the component. Only one root element allowed. 
+        const { movies, selectedMovie, user, registered } = this.state;
+
+        /* if (!user) return <RegistrationView />*/
+
+        if (!user) return <div> <button type="submit" onCLick={<RegistrationView />}> Take me to the registration page!</button>
+            <br></br>
+            <LoginView onLoggedIn={
+                user => this.onLoggedIn(user)} />
+        </div>
+
 
         if (movies.length === 0) return <div className="main-view"> The list is empty!</div>
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 // setting state of username and password as empty by default
 export function RegistrationView(props) {
     const [username, setUsername] = useState('');

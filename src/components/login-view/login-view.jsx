@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
+import { render } from 'react-dom';
+import { RegistrationView } from '../registration-view/registration-view';
 // setting state of username and password as empty by default
 export function LoginView(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [toRegister] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(username, password);
         props.onLoggedIn(username);
     }
-    //Adding the appropriate information for users to login - username and password. 
+
+    /*let handleClick = () => { toRegister = false };
+
+    if (toRegister = false) return <RegistrationView />*/
+
     return (
         <div>
             <form>
@@ -26,4 +33,5 @@ export function LoginView(props) {
         </div>
     );
 }
-//^^^ The above button will also include a function in the next exercise to direct users without a login to the registration view. 
+
+
