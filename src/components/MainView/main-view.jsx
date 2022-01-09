@@ -50,8 +50,7 @@ export class MainView extends React.Component {    // The following code actuall
 
         /* if (!user) return <RegistrationView />*/
 
-        if (!user) return <div> <button type="submit" onCLick={<RegistrationView />}> Take me to the registration page!</button>
-            <br></br>
+        if (!user) return <div>
             <LoginView onLoggedIn={
                 user => this.onLoggedIn(user)} />
         </div>
