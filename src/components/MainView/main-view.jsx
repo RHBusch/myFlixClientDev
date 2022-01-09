@@ -1,12 +1,10 @@
 import React from 'react'; // Making React available to create components. 
 import { MovieCard } from '../movie-card/movie-card';
+import PropTypes from 'prop-types'
 import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import axios from 'axios';
-import theBigSickPlaceholder from '../../../img/posterBigSick.png'
-import statenIslandPlaceholder from '../../../img/posterStatenIsland.png'
-import hobbitPlaceholder from '../../../img/posterHobbit.png'
 import { render } from 'react-dom';
 
 
@@ -16,11 +14,7 @@ export class MainView extends React.Component {    // The following code actuall
     constructor() { // Constructor code is executed before render code - setting up the framework for the render. 
         super() //Calling React.Component 
         this.state = {
-            movies: [ //creating an object -movies- with an array holding data. 
-                /* { _id: 1, Title: 'The Big Sick', Description: 'test descriptions', ImagePath: theBigSickPlaceholder },
-                 { _id: 2, Title: 'The King of Staten Island', Description: 'test description', ImagePath: statenIslandPlaceholder },
-                 { _id: 3, Title: 'The Hobbit', Description: 'test description', ImagePath: hobbitPlaceholder }*/
-            ],
+            movies: [],
             selectedMovie: null,
             user: null,
             register: 'false'
