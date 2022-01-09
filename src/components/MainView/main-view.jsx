@@ -38,24 +38,11 @@ export class MainView extends React.Component {    // The following code actuall
         });
     }
 
-    /*onRegistration(register) {
-        this.setState({
-            register,
-        });
-    }*/
-
     onLoggedIn(user) {
         this.setState({
             user
         });
     }
-
-    /* onRegister(registration){
-         this.setState({
-             register: 'true'
-         });
-         }*/
-
 
 
     render() { //The render () function is what returns the visual state of the component. Only one root element allowed. 

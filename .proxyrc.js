@@ -5,3 +5,4 @@ module.exports = function (app) {
         next();
     });
 };
+//This seems to be the key solution to showcasing images. Safari worked fine, but Google Chrome repeatedly put up errors. 
