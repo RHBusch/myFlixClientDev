@@ -20,38 +20,34 @@ export function LoginView(props) {
         props.onLoggedIn(username);
     }
 
-    /*let handleClick = () => { toRegister = false };
-
-    if (toRegister = false) return <RegistrationView />*/
-
     return (
         <Container>
             <Row>
-                <Col></Col>
-                <Col>
-                    <Card>
-                        <Card.Body>
-                            <Form>
-                                <Form.Group controlId="formUsername">
-                                    <Form.Label>Username:</Form.Label>
-                                    <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
-                                </Form.Group>
+                <Row>
+                    <Col></Col>
+                    <Col>
+                        <Card>
+                            <Card.Body>
+                                <Form>
+                                    <Form.Group controlId="formUsername">
+                                        <Form.Label>Username:</Form.Label>
+                                        <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
+                                    </Form.Group>
 
-                                <Form.Group controlId="formPassword">
-                                    <Form.Label>Password:</Form.Label>
-                                    <Form.Control type="text" onChange={e => setPassword(e.target.value)} />
-                                </Form.Group>
-                                <Button variant="primary" type="submit" onClick={handleSubmit}>
-                                    Submit
-                                </Button>
-                            </Form>
-                        </Card.Body>
-                    </Card>
-                </Col>
+                                    <Form.Group controlId="formPassword">
+                                        <Form.Label>Password:</Form.Label>
+                                        <Form.Control type="text" onChange={e => setPassword(e.target.value)} />
+                                    </Form.Group>
+                                    <Button variant="primary" type="submit" onClick={handleSubmit}>
+                                        SubmitSSSSSSSSS
+                                    </Button>
+                                </Form>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
             </Row>
         </Container>
 
     );
 }
-
-

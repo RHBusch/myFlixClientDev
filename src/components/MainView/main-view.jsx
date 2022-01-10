@@ -50,13 +50,11 @@ export class MainView extends React.Component {    // The following code actuall
     render() { //The render () function is what returns the visual state of the component. Only one root element allowed. 
         const { movies, selectedMovie, user, registered } = this.state;
 
-        /* if (!user) return <RegistrationView />*/
 
         if (!user) return <div>
             <LoginView onLoggedIn={
                 user => this.onLoggedIn(user)} />
         </div>
-
 
         if (movies.length === 0) return <div className="main-view"> The list is empty!</div>
 
