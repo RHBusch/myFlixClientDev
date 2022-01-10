@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
 import { render } from 'react-dom';
 import { RegistrationView } from '../registration-view/registration-view';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Card from 'react-bootstrap/Card';
+
+
+
 // setting state of username and password as empty by default
 export function LoginView(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [toRegister] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -18,19 +25,32 @@ export function LoginView(props) {
     if (toRegister = false) return <RegistrationView />*/
 
     return (
-        <div>
-            <form>
-                <label>
-                    Username:
-                    <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
-                </label>
-                <label>
-                    Password:
-                    <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
-                </label>
-                <button type="submit" onClick={handleSubmit}>Submit</button>
-            </form>
-        </div>
+        <Container>
+            <Row>
+                <Col></Col>
+                <Col>
+                    <Card>
+                        <Card.Body>
+                            <Form>
+                                <Form.Group controlId="formUsername">
+                                    <Form.Label>Username:</Form.Label>
+                                    <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
+                                </Form.Group>
+
+                                <Form.Group controlId="formPassword">
+                                    <Form.Label>Password:</Form.Label>
+                                    <Form.Control type="text" onChange={e => setPassword(e.target.value)} />
+                                </Form.Group>
+                                <Button variant="primary" type="submit" onClick={handleSubmit}>
+                                    Submit
+                                </Button>
+                            </Form>
+                        </Card.Body>
+                    </Card>
+                </Col>
+            </Row>
+        </Container>
+
     );
 }
 

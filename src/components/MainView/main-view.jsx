@@ -6,6 +6,8 @@ import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import axios from 'axios';
 import { render } from 'react-dom';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 
@@ -59,14 +61,22 @@ export class MainView extends React.Component {    // The following code actuall
         if (movies.length === 0) return <div className="main-view"> The list is empty!</div>
 
         return ( //Maybe add a react fragment here? 
-            <div className="main-view">
+            <Row className="main-view justify-content-md-center">
                 {selectedMovie
-                    ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
-                    : movies.map(movie => (  // The code below sets the clicked movie as the newSelectedMovie --- listening for click. 
-                        <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }} />
+                    ? (
+                        <Col md={8}>
+                            <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
+                        </Col>
+                    )
+                    :
+
+                    movies.map(movie => (
+                        <Col md={3}>
+                            <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }} />
+                        </Col>
                     ))
                 }
-            </div>
+            </Row>
         )
     }
 }
