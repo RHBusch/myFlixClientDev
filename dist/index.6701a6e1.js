@@ -24591,6 +24591,7 @@ function LoginView(props) {
                                                 }),
                                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
                                                     type: "text",
+                                                    value: username,
                                                     onChange: (e)=>setUsername(e.target.value)
                                                     ,
                                                     __source: {
@@ -24605,36 +24606,30 @@ function LoginView(props) {
                                             controlId: "formPassword",
                                             __source: {
                                                 fileName: "src/components/login-view/login-view.jsx",
-                                                lineNumber: 34
+                                                lineNumber: 33
                                             },
                                             __self: this,
                                             children: [
                                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                     __source: {
                                                         fileName: "src/components/login-view/login-view.jsx",
-                                                        lineNumber: 35
+                                                        lineNumber: 34
                                                     },
                                                     __self: this,
                                                     children: "Password:"
                                                 }),
                                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
                                                     type: "text",
+                                                    value: password,
                                                     onChange: (e)=>setPassword(e.target.value)
                                                     ,
                                                     __source: {
                                                         fileName: "src/components/login-view/login-view.jsx",
-                                                        lineNumber: 36
+                                                        lineNumber: 35
                                                     },
                                                     __self: this
                                                 })
                                             ]
-                                        }),
-                                        /*#__PURE__*/ _jsxRuntime.jsx("br", {
-                                            __source: {
-                                                fileName: "src/components/login-view/login-view.jsx",
-                                                lineNumber: 38
-                                            },
-                                            __self: this
                                         }),
                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
                                             variant: "primary",
@@ -24642,7 +24637,7 @@ function LoginView(props) {
                                             onClick: handleSubmit,
                                             __source: {
                                                 fileName: "src/components/login-view/login-view.jsx",
-                                                lineNumber: 39
+                                                lineNumber: 37
                                             },
                                             __self: this,
                                             children: "Submit!"
@@ -24656,7 +24651,7 @@ function LoginView(props) {
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                     __source: {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 46
+                        lineNumber: 44
                     },
                     __self: this
                 })
