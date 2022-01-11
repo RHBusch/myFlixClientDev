@@ -1,4 +1,6 @@
+import { array } from 'prop-types';
 import React, { useState } from 'react';
+import { Navbar, Container, Nav, Form, Button, Card, Container, Row, Col } from 'react-bootstrap';
 
 // setting state of username and password as empty by default
 export function RegistrationView(props) {
@@ -15,28 +17,43 @@ export function RegistrationView(props) {
     }
 
     return (
-        <form>
-            <label>
-                Username:
-                <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
-            </label>
-            <label>
-                Password:
-                <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
-            </label>
-            <label>
-                Email:
-                <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
-            </label>
-            <label>
-                Birthday:
-                <input type="date" value={birthday} onChange={e => setBirthday(e.target.value)} />
-            </label>
-            <label>
-                Favorite Movies:
-                <input type="text" value={favMovies} onChange={e => setfavMovies(e.target.value)} />
-            </label>
-            <button type="submit" onClick={handleSubmit}>Submit</button>
-        </form>
-    );
-}//All of the above are included in the documentation for the myFlix api completed in exercise two. Any updates must be made both here and there. 
+        <Container>
+            <Row>
+                <Col></Col>
+                <Col>
+                    <Card style={{ marginTop: 100, marginBottom: 100, width: 300 }}>
+                        <Card.Body>
+                            <Card.Title>Register Here!</Card.Title>
+                            <Form>
+                                <Form.Group controlId="formGroupUsername">
+                                    <Form.Label>Username:</Form.Label>
+                                    <Form.Control type="text" value={username}
+                                        onChange={e => setUsername(e.target.value)} />
+                                </Form.Group>
+                                <Form.Group controlId="formGroupPassword">
+                                    <Form.Label>Password:</Form.Label>
+                                    <Form.Control type="password" value={password}
+                                        onChange={e => setPassword(e.target.value)} />
+                                </Form.Group>
+                                <Form.Group controlId="formGroupBirthday">
+                                    <Form.Label>Birthday:</Form.Label>
+                                    <Form.Control type="date" value={birthday}
+                                        onChange={e => setBirthday(e.target.value)} />
+                                </Form.Group>
+                                <Form.Group controlId="formGroupMovies">
+                                    <Form.Label>Favorite Movies:</Form.Label>
+                                    <Form.Control type="array" value={array}
+                                        onChange={e => setFavoriteMovies(e.target.value)} />
+                                </Form.Group>
+                                <Button variant="primary" type="submit" onClick={handleSubmit}>
+                                    Submit!
+                                </Button>
+                            </Form>
+                        </Card.Body>
+                    </Card>
+                </Col>
+                <Col></Col>
+            </Row>
+        </Container>
+    )
+};
