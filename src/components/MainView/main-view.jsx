@@ -9,6 +9,7 @@ import { render } from 'react-dom';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Navbar, Container } from 'react-bootstrap';
+import './main-view.scss';
 
 
 
@@ -62,15 +63,15 @@ export class MainView extends React.Component {    // The following code actuall
         return (
 
             <div>
-                <Container>
-                    <Navbar bg="dark" variant="dark">
-                        <Container>
-                            <Navbar.Brand href="#home">
-                                myFlix App
-                            </Navbar.Brand>
-                        </Container>
-                    </Navbar>
-                </Container>
+
+                <Navbar fixed="top" bg="dark" variant="dark" className="mainNavigation" expand="lg">
+                    <Container>
+                        <Navbar.Brand href="#home">
+                            myFlix App
+                        </Navbar.Brand>
+                    </Container>
+                </Navbar>
+
 
                 <Row className="main-view justify-content-md-center">
                     {selectedMovie
