@@ -25,25 +25,25 @@ export function RegistrationView(props) {
                         <Card.Body>
                             <Card.Title>Register Here!</Card.Title>
                             <Form>
+                                <Form.Group controlId="formGroupEmail">
+                                    <Form.Label>Email:</Form.Label>
+                                    <Form.Control type="email" value={email} placeholder="Enter Email Address..."
+                                        onChange={e => setUsername(e.target.value)} />
+                                </Form.Group>
                                 <Form.Group controlId="formGroupUsername">
                                     <Form.Label>Username:</Form.Label>
-                                    <Form.Control type="text" value={username}
+                                    <Form.Control type="text" value={username} placeholder="Enter Username..."
                                         onChange={e => setUsername(e.target.value)} />
                                 </Form.Group>
                                 <Form.Group controlId="formGroupPassword">
                                     <Form.Label>Password:</Form.Label>
-                                    <Form.Control type="password" value={password}
+                                    <Form.Control type="password" value={password} placeholder="Password must be 8 characters..."
                                         onChange={e => setPassword(e.target.value)} />
                                 </Form.Group>
                                 <Form.Group controlId="formGroupBirthday">
                                     <Form.Label>Birthday:</Form.Label>
                                     <Form.Control type="date" value={birthday}
                                         onChange={e => setBirthday(e.target.value)} />
-                                </Form.Group>
-                                <Form.Group controlId="formGroupMovies">
-                                    <Form.Label>Favorite Movies:</Form.Label>
-                                    <Form.Control type="array" value={array}
-                                        onChange={e => setFavoriteMovies(e.target.value)} />
                                 </Form.Group>
                                 <Button variant="primary" type="submit" onClick={handleSubmit}>
                                     Submit!
