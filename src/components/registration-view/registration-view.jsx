@@ -18,7 +18,8 @@ export function RegistrationView(props) {
     }
 
     return (
-        <div>
+        <Container fluid className="registerContainerBackground">
+
             <Navbar fixed="top" bg="dark" variant="dark" className="mainNavigation" expand="lg">
                 <Container>
                     <Navbar.Brand className="navText" href="#home">
@@ -32,7 +33,7 @@ export function RegistrationView(props) {
                     <Col></Col>
                     <Col>
                         <Card style={{ marginTop: 100, marginBottom: 100, width: 300 }}>
-                            <Card.Body>
+                            <Card.Body className='cardBodyStyle'>
                                 <Card.Title style={{ textAlign: 'center' }} >Register Here!</Card.Title>
                                 <Form>
                                     <Form.Group controlId="formGroupUsername">
@@ -65,6 +66,6 @@ export function RegistrationView(props) {
                     <Col></Col>
                 </Row>
             </Container>
-        </div>
+        </Container>
     )
 };

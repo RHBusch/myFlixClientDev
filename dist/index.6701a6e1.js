@@ -36017,7 +36017,9 @@ function RegistrationView(props) {
         console.log(username, password);
         props.onLoggedIn(username);
     };
-    return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+    return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
+        fluid: true,
+        className: "registerContainerBackground",
         __source: {
             fileName: "src/components/registration-view/registration-view.jsx",
             lineNumber: 21
@@ -36032,13 +36034,13 @@ function RegistrationView(props) {
                 expand: "lg",
                 __source: {
                     fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 22
+                    lineNumber: 23
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
                     __source: {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 23
+                        lineNumber: 24
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Brand, {
@@ -36046,7 +36048,7 @@ function RegistrationView(props) {
                         href: "#home",
                         __source: {
                             fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 24
+                            lineNumber: 25
                         },
                         __self: this,
                         children: "myFlix App"
@@ -36056,27 +36058,27 @@ function RegistrationView(props) {
             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
                 __source: {
                     fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 30
+                    lineNumber: 31
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                     __source: {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 31
+                        lineNumber: 32
                     },
                     __self: this,
                     children: [
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                             __source: {
                                 fileName: "src/components/registration-view/registration-view.jsx",
-                                lineNumber: 32
+                                lineNumber: 33
                             },
                             __self: this
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                             __source: {
                                 fileName: "src/components/registration-view/registration-view.jsx",
-                                lineNumber: 33
+                                lineNumber: 34
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card, {
@@ -36087,13 +36089,14 @@ function RegistrationView(props) {
                                 },
                                 __source: {
                                     fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 34
+                                    lineNumber: 35
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
+                                    className: "cardBodyStyle",
                                     __source: {
                                         fileName: "src/components/registration-view/registration-view.jsx",
-                                        lineNumber: 35
+                                        lineNumber: 36
                                     },
                                     __self: this,
                                     children: [
@@ -36103,7 +36106,7 @@ function RegistrationView(props) {
                                             },
                                             __source: {
                                                 fileName: "src/components/registration-view/registration-view.jsx",
-                                                lineNumber: 36
+                                                lineNumber: 37
                                             },
                                             __self: this,
                                             children: "Register Here!"
@@ -36111,7 +36114,7 @@ function RegistrationView(props) {
                                         /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form, {
                                             __source: {
                                                 fileName: "src/components/registration-view/registration-view.jsx",
-                                                lineNumber: 37
+                                                lineNumber: 38
                                             },
                                             __self: this,
                                             children: [
@@ -36119,14 +36122,14 @@ function RegistrationView(props) {
                                                     controlId: "formGroupUsername",
                                                     __source: {
                                                         fileName: "src/components/registration-view/registration-view.jsx",
-                                                        lineNumber: 38
+                                                        lineNumber: 39
                                                     },
                                                     __self: this,
                                                     children: [
                                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                             __source: {
                                                                 fileName: "src/components/registration-view/registration-view.jsx",
-                                                                lineNumber: 39
+                                                                lineNumber: 40
                                                             },
                                                             __self: this,
                                                             children: "Username:"
@@ -36139,7 +36142,7 @@ function RegistrationView(props) {
                                                             ,
                                                             __source: {
                                                                 fileName: "src/components/registration-view/registration-view.jsx",
-                                                                lineNumber: 40
+                                                                lineNumber: 41
                                                             },
                                                             __self: this
                                                         })
@@ -36149,14 +36152,14 @@ function RegistrationView(props) {
                                                     controlId: "formGroupEmail",
                                                     __source: {
                                                         fileName: "src/components/registration-view/registration-view.jsx",
-                                                        lineNumber: 43
+                                                        lineNumber: 44
                                                     },
                                                     __self: this,
                                                     children: [
                                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                             __source: {
                                                                 fileName: "src/components/registration-view/registration-view.jsx",
-                                                                lineNumber: 44
+                                                                lineNumber: 45
                                                             },
                                                             __self: this,
                                                             children: "Email:"
@@ -36169,7 +36172,7 @@ function RegistrationView(props) {
                                                             ,
                                                             __source: {
                                                                 fileName: "src/components/registration-view/registration-view.jsx",
-                                                                lineNumber: 45
+                                                                lineNumber: 46
                                                             },
                                                             __self: this
                                                         })
@@ -36179,14 +36182,14 @@ function RegistrationView(props) {
                                                     controlId: "formGroupPassword",
                                                     __source: {
                                                         fileName: "src/components/registration-view/registration-view.jsx",
-                                                        lineNumber: 48
+                                                        lineNumber: 49
                                                     },
                                                     __self: this,
                                                     children: [
                                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                             __source: {
                                                                 fileName: "src/components/registration-view/registration-view.jsx",
-                                                                lineNumber: 49
+                                                                lineNumber: 50
                                                             },
                                                             __self: this,
                                                             children: "Password:"
@@ -36199,7 +36202,7 @@ function RegistrationView(props) {
                                                             ,
                                                             __source: {
                                                                 fileName: "src/components/registration-view/registration-view.jsx",
-                                                                lineNumber: 50
+                                                                lineNumber: 51
                                                             },
                                                             __self: this
                                                         })
@@ -36209,14 +36212,14 @@ function RegistrationView(props) {
                                                     controlId: "formGroupBirthday",
                                                     __source: {
                                                         fileName: "src/components/registration-view/registration-view.jsx",
-                                                        lineNumber: 53
+                                                        lineNumber: 54
                                                     },
                                                     __self: this,
                                                     children: [
                                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                             __source: {
                                                                 fileName: "src/components/registration-view/registration-view.jsx",
-                                                                lineNumber: 54
+                                                                lineNumber: 55
                                                             },
                                                             __self: this,
                                                             children: "Birthday:"
@@ -36228,7 +36231,7 @@ function RegistrationView(props) {
                                                             ,
                                                             __source: {
                                                                 fileName: "src/components/registration-view/registration-view.jsx",
-                                                                lineNumber: 55
+                                                                lineNumber: 56
                                                             },
                                                             __self: this
                                                         })
@@ -36241,7 +36244,7 @@ function RegistrationView(props) {
                                                     onClick: handleSubmit,
                                                     __source: {
                                                         fileName: "src/components/registration-view/registration-view.jsx",
-                                                        lineNumber: 58
+                                                        lineNumber: 59
                                                     },
                                                     __self: this,
                                                     children: "Submit!"
@@ -36255,7 +36258,7 @@ function RegistrationView(props) {
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                             __source: {
                                 fileName: "src/components/registration-view/registration-view.jsx",
-                                lineNumber: 65
+                                lineNumber: 66
                             },
                             __self: this
                         })
