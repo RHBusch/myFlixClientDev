@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Fascinate&display=swap");
+.registrationButton {
+  width: 100% !important;
+  display: block !important;
+}
+.navText {
+  font-family: "Fascinate" !important;
+}
+@import url("https://fonts.googleapis.com/css2?family=Fascinate&display=swap");
+.navText {
+  font-family: "Fascinate" !important;
+}
+.loginButton {
+  width: 100% !important;
+}
+.navText {
+  font-family: "limelight" !important;
+}
+@import url("https://fonts.googleapis.com/css2?family=Fascinate&display=swap");
+.main-view {
+  display: inline-block;
+}
+.navText {
+  font-family: "Fascinate" !important;
+}
+.my-flix {
+  color: #d89313;
+}
+/*# sourceMappingURL=index.011f33b6.css.map */

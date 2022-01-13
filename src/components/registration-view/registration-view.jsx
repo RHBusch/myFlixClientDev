@@ -1,6 +1,7 @@
 import { array } from 'prop-types';
 import React, { useState } from 'react';
 import { Navbar, Container, Nav, Form, Button, Card, Container, Row, Col } from 'react-bootstrap';
+import './registration-view.scss';
 
 // setting state of username and password as empty by default
 export function RegistrationView(props) {
@@ -20,7 +21,7 @@ export function RegistrationView(props) {
         <div>
             <Navbar fixed="top" bg="dark" variant="dark" className="mainNavigation" expand="lg">
                 <Container>
-                    <Navbar.Brand href="#home">
+                    <Navbar.Brand className="navText" href="#home">
                         myFlix App
                     </Navbar.Brand>
                 </Container>
@@ -32,7 +33,7 @@ export function RegistrationView(props) {
                     <Col>
                         <Card style={{ marginTop: 100, marginBottom: 100, width: 300 }}>
                             <Card.Body>
-                                <Card.Title>Register Here!</Card.Title>
+                                <Card.Title style={{ textAlign: 'center' }} >Register Here!</Card.Title>
                                 <Form>
                                     <Form.Group controlId="formGroupUsername">
                                         <Form.Label>Username:</Form.Label>
@@ -54,7 +55,7 @@ export function RegistrationView(props) {
                                         <Form.Control type="date" value={birthday}
                                             onChange={e => setBirthday(e.target.value)} />
                                     </Form.Group>
-                                    <Button variant="primary" type="submit" onClick={handleSubmit}>
+                                    <Button className="registrationButton" variant="primary" type="submit" onClick={handleSubmit}>
                                         Submit!
                                     </Button>
                                 </Form>
