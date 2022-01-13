@@ -1,4 +1,6 @@
-
+.main-view {
+  display: inline-block;
+}
 .my-flix {
   color: #d89313;
 }
