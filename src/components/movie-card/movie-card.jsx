@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import './movie-card.scss'
 
 export class MovieCard extends React.Component {
     render() {
@@ -14,7 +15,7 @@ export class MovieCard extends React.Component {
         return (
             <Card>
                 <Card.Img variant="top" src={movie.ImagePath} />
-                <Card.Body>
+                <Card.Body className="cardBodyStyle">
                     <Card.Title>{movie.Title}</Card.Title>
                     <Card.Text>{movie.Description}</Card.Text>
                     <Button onClick={() => onMovieClick(movie)} variant="link">Open</Button>
