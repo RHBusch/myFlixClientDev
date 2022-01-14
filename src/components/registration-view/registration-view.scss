@@ -4,8 +4,8 @@
 .registrationButton{
     width: 100% !important;
     display: block !important;
-    background: #55fcfc !important;
-    color:black !important;
+    background: #ff84eb !important;
+    color:rgb(0, 0, 0) !important;
 }
 
 .navText{
@@ -13,15 +13,19 @@
     color: #55fcfc !important;
   }
 
-  .cardBodyStyle{
+  .regCardBodyStyle{
     font-family: 'Leto' !important;
-    background: #f8fa7e !important; 
+    background: #55fcfc !important; 
   }
 
   .registerContainerBackground{
-    background: #fcfcfc;
+    background: #ffffff;
     width: 100%;
     height: 100vh;
+  }
+
+  .flixColor{
+    color: #ff84eb !important;
   }
 
   

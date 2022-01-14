@@ -23002,7 +23002,7 @@ class MainView extends _reactDefault.default.Component {
                             lineNumber: 68
                         },
                         __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Brand, {
+                        children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Navbar.Brand, {
                             className: "navText",
                             href: "#home",
                             __source: {
@@ -23010,7 +23010,33 @@ class MainView extends _reactDefault.default.Component {
                                 lineNumber: 69
                             },
                             __self: this,
-                            children: "myFlix App"
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                    __source: {
+                                        fileName: "src/components/MainView/main-view.jsx",
+                                        lineNumber: 70
+                                    },
+                                    __self: this,
+                                    children: "my"
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                    class: "flixColor",
+                                    __source: {
+                                        fileName: "src/components/MainView/main-view.jsx",
+                                        lineNumber: 70
+                                    },
+                                    __self: this,
+                                    children: "Flix"
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                    __source: {
+                                        fileName: "src/components/MainView/main-view.jsx",
+                                        lineNumber: 70
+                                    },
+                                    __self: this,
+                                    children: "App"
+                                })
+                            ]
                         })
                     })
                 }),
@@ -23119,7 +23145,7 @@ class MovieCard extends _reactDefault.default.Component {
                     __self: this
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Body, {
-                    className: "cardBodyStyle",
+                    className: "movieCardBodyStyle",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
                         lineNumber: 18
@@ -23143,9 +23169,10 @@ class MovieCard extends _reactDefault.default.Component {
                             children: movie.Description
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                            className: "movieCardButton",
                             onClick: ()=>onMovieClick(movie)
                             ,
-                            variant: "link",
+                            variant: "light",
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
                                 lineNumber: 21
@@ -24467,7 +24494,7 @@ class MovieView extends _reactDefault.default.Component {
                                     __self: this
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Body, {
-                                    className: "cardBodyStyle",
+                                    className: "movieViewCardStyle",
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
                                         lineNumber: 23
@@ -24491,9 +24518,10 @@ class MovieView extends _reactDefault.default.Component {
                                             children: movie.Description
                                         }),
                                         /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                                            className: "movieViewButton",
                                             onClick: ()=>onBackClick(null)
                                             ,
-                                            variant: "link",
+                                            variant: "light",
                                             __source: {
                                                 fileName: "src/components/movie-view/movie-view.jsx",
                                                 lineNumber: 26
@@ -24525,7 +24553,7 @@ class MovieView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./movie-view":"ikZdr","react-bootstrap/Card":"MoOk8","react-bootstrap/Button":"9CzHT","./movie-view.scss":"kvL93","@parcel/transformer-js/src/esmodule-helpers.js":"fp0v4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cG54J","react-bootstrap":"h2YVd"}],"kvL93":[function() {},{}],"h2YVd":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./movie-view":"ikZdr","react-bootstrap/Card":"MoOk8","react-bootstrap/Button":"9CzHT","react-bootstrap":"h2YVd","./movie-view.scss":"kvL93","@parcel/transformer-js/src/esmodule-helpers.js":"fp0v4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cG54J"}],"h2YVd":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Accordion", ()=>_accordionDefault.default
@@ -35749,7 +35777,7 @@ Tooltip.defaultProps = defaultProps;
 Tooltip.displayName = 'Tooltip';
 exports.default = Tooltip;
 
-},{"classnames":"bOXOh","react":"6TuXu","./ThemeProvider":"eeqfi","./helpers":"S1Bw1","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"fp0v4"}],"054li":[function(require,module,exports) {
+},{"classnames":"bOXOh","react":"6TuXu","./ThemeProvider":"eeqfi","./helpers":"S1Bw1","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"fp0v4"}],"kvL93":[function() {},{}],"054li":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$02dd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35802,7 +35830,7 @@ function LoginView(props) {
                         lineNumber: 23
                     },
                     __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Brand, {
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Navbar.Brand, {
                         className: "navText",
                         href: "#home",
                         __source: {
@@ -35810,7 +35838,33 @@ function LoginView(props) {
                             lineNumber: 24
                         },
                         __self: this,
-                        children: "myFlix App"
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                __source: {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 25
+                                },
+                                __self: this,
+                                children: "my"
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                class: "flixColor",
+                                __source: {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 25
+                                },
+                                __self: this,
+                                children: "Flix"
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                __source: {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 25
+                                },
+                                __self: this,
+                                children: "App"
+                            })
+                        ]
                     })
                 })
             }),
@@ -35852,6 +35906,7 @@ function LoginView(props) {
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
+                                    className: "logCardBodyStyle",
                                     __source: {
                                         fileName: "src/components/login-view/login-view.jsx",
                                         lineNumber: 34
@@ -36043,7 +36098,7 @@ function RegistrationView(props) {
                         lineNumber: 24
                     },
                     __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Brand, {
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Navbar.Brand, {
                         className: "navText",
                         href: "#home",
                         __source: {
@@ -36051,7 +36106,33 @@ function RegistrationView(props) {
                             lineNumber: 25
                         },
                         __self: this,
-                        children: "myFlix App"
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                __source: {
+                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                    lineNumber: 26
+                                },
+                                __self: this,
+                                children: "my"
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                class: "flixColor",
+                                __source: {
+                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                    lineNumber: 26
+                                },
+                                __self: this,
+                                children: "Flix"
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                __source: {
+                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                    lineNumber: 26
+                                },
+                                __self: this,
+                                children: "App"
+                            })
+                        ]
                     })
                 })
             }),
@@ -36093,7 +36174,7 @@ function RegistrationView(props) {
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
-                                    className: "cardBodyStyle",
+                                    className: "regCardBodyStyle",
                                     __source: {
                                         fileName: "src/components/registration-view/registration-view.jsx",
                                         lineNumber: 36

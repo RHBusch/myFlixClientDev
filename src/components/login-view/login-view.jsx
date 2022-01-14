@@ -22,7 +22,7 @@ export function LoginView(props) {
             <Navbar fixed="top" bg="dark" variant="dark" className="mainNavigation" expand="lg">
                 <Container>
                     <Navbar.Brand className="navText" href="#home">
-                        myFlix App
+                        <span>my</span><span class="flixColor">Flix</span><span>App</span>
                     </Navbar.Brand>
                 </Container>
             </Navbar>
@@ -31,7 +31,7 @@ export function LoginView(props) {
                     <Col></Col>
                     <Col>
                         <Card style={{ marginTop: 100, marginBottom: 100, width: 300 }}>
-                            <Card.Body>
+                            <Card.Body className="logCardBodyStyle">
                                 <Card.Title style={{ textAlign: 'center' }} >Welcome to myFlix!</Card.Title>
                                 <Card.Subtitle className="mb-2 text-muted text-center">*Please Login*</Card.Subtitle>
                                 <Form>

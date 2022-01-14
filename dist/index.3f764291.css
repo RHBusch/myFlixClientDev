@@ -1,30 +1,43 @@
 @import url("https://fonts.googleapis.com/css2?family=Fascinate&family=Lato&family=Limelight&display=swap");
-.cardBodyStyle {
+.movieCardBodyStyle {
   font-family: "Lato" !important;
+  background: #55fcfc !important;
+}
+.movieCardButton {
+  color: black !important;
+  background: #ff84eb !important;
 }
 @import url("https://fonts.googleapis.com/css2?family=Fascinate&family=Lato&family=Limelight&display=swap");
-.cardBodyStyle {
+.movieViewCardStyle {
   font-family: "Lato" !important;
+  background: #55fcfc !important;
+}
+.movieViewButton {
+  color: black !important;
+  background: #ff84eb !important;
 }
 @import url("https://fonts.googleapis.com/css2?family=Fascinate&family=Limelight&display=swap");
 .registrationButton {
   width: 100% !important;
   display: block !important;
-  background: #55fcfc !important;
+  background: #ff84eb !important;
   color: black !important;
 }
 .navText {
   font-family: "Fascinate" !important;
   color: #55fcfc !important;
 }
-.cardBodyStyle {
+.regCardBodyStyle {
   font-family: "Leto" !important;
-  background: #f8fa7e !important;
+  background: #55fcfc !important;
 }
 .registerContainerBackground {
-  background: #fcfcfc;
+  background: #ffffff;
   width: 100%;
   height: 100vh;
+}
+.flixColor {
+  color: #ff84eb !important;
 }
 @import url("https://fonts.googleapis.com/css2?family=Fascinate&family=Limelight&display=swap");
 .navText {
@@ -32,9 +45,16 @@
 }
 .loginButton {
   width: 100% !important;
+  display: block !important;
+  background: #ff84eb !important;
+  color: black !important;
 }
-.navText {
-  font-family: "limelight" !important;
+.flixColor {
+  color: #ff84eb !important;
+}
+.logCardBodyStyle {
+  font-family: "Leto" !important;
+  background: #55fcfc !important;
 }
 @import url("https://fonts.googleapis.com/css2?family=Fascinate&family=Limelight&display=swap");
 .main-view {
@@ -42,6 +62,9 @@
 }
 .navText {
   font-family: "Fascinate" !important;
+}
+.flixColor {
+  color: #ff84eb !important;
 }
 .my-flix {
   color: #d89313;

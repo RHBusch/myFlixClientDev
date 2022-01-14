@@ -67,7 +67,7 @@ export class MainView extends React.Component {    // The following code actuall
                 <Navbar fixed="top" bg="dark" variant="dark" className="mainNavigation" expand="lg">
                     <Container>
                         <Navbar.Brand className="navText" href="#home">
-                            myFlix App
+                            <span>my</span><span class="flixColor">Flix</span><span>App</span>
                         </Navbar.Brand>
                     </Container>
                 </Navbar>

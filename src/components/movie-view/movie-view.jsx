@@ -20,10 +20,10 @@ export class MovieView extends React.Component {
                     <Col>
                         <Card style={{ marginTop: 100, marginBottom: 100, width: 300 }}>
                             <Card.Img variant="top" src={movie.ImagePath} />
-                            <Card.Body className="cardBodyStyle">
+                            <Card.Body className="movieViewCardStyle">
                                 <Card.Title>{movie.Title}</Card.Title>
                                 <Card.Text>{movie.Description}</Card.Text>
-                                <Button onClick={() => onBackClick(null)} variant="link">Back</Button>
+                                <Button className="movieViewButton" onClick={() => onBackClick(null)} variant="light">Back</Button>
                             </Card.Body>
                         </Card>
                     </Col>

@@ -6,9 +6,17 @@
   }
 
 .loginButton{
-    width: 100% !important;
+  width: 100% !important;
+  display: block !important;
+  background: #ff84eb !important;
+  color:rgb(0, 0, 0) !important;
 }
 
-.navText{
-    font-family: 'limelight' !important;
-  }
+.flixColor{
+  color: #ff84eb !important;
+}
+
+.logCardBodyStyle{
+  font-family: 'Leto' !important;
+    background: #55fcfc !important; 
+}

@@ -15,10 +15,10 @@ export class MovieCard extends React.Component {
         return (
             <Card>
                 <Card.Img variant="top" src={movie.ImagePath} />
-                <Card.Body className="cardBodyStyle">
+                <Card.Body className="movieCardBodyStyle">
                     <Card.Title>{movie.Title}</Card.Title>
                     <Card.Text>{movie.Description}</Card.Text>
-                    <Button onClick={() => onMovieClick(movie)} variant="link">Open</Button>
+                    <Button className="movieCardButton" onClick={() => onMovieClick(movie)} variant="light">Open</Button>
                 </Card.Body>
             </Card>
         )
