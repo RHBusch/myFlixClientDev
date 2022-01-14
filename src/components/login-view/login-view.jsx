@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { RegistrationView } from '../registration-view/registration-view';
 import { Navbar, Container, Nav, Form, Button, Card, Container, Row, Col } from 'react-bootstrap';
 import './login-view.scss';
+import axios from 'axios';
 
 
 // setting state of username and password as empty by default
