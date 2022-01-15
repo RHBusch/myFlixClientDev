@@ -25,15 +25,15 @@ export class MainView extends React.Component {    // The following code actuall
         }
     }
     componentDidMount() {
-        axios.get('https://busch-movie-api.herokuapp.com/movies')
-            .then(response => {
-                this.setState({
-                    movies: response.data
-                });
-            })
-            .catch(error => {
-                console.log(error);
-            });
+        /* axios.get('https://busch-movie-api.herokuapp.com/movies')
+             .then(response => {
+                 this.setState({
+                     movies: response.data
+                 });
+             })
+             .catch(error => {
+                 console.log(error);
+             });*/
     }
 
     setSelectedMovie(movie) {
@@ -51,6 +51,20 @@ export class MainView extends React.Component {    // The following code actuall
         localStorage.setItem('token', authData.token);
         localStorage.setItem('user', authData.user.Username);
         this.getMovies(authData.token);
+    }
+
+    getMovies(token) {
+        axios.get('https://busch-movie-api.herokuapp.com/movies', {
+            headers: { Authorization: `Bearer ${token}` }
+        })
+            .then(response => {
+                this.setState({
+                    movies: response.data
+                });
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
     }
 
 
