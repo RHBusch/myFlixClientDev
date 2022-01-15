@@ -42,10 +42,15 @@ export class MainView extends React.Component {    // The following code actuall
         });
     }
 
-    onLoggedIn(user) {
+    onLoggedIn(authData) {
+        console.log(authData);
         this.setState({
-            user
+            user: authData.user.Username
         });
+
+        localStorage.setItem('token', authData.token);
+        localStorage.setItem('user', authData.user.Username);
+        this.getMovies(authData.token);
     }
 
 
@@ -54,7 +59,7 @@ export class MainView extends React.Component {    // The following code actuall
 
 
         if (!user) return <div>
-            <RegistrationView onLoggedIn={
+            <LoginView onLoggedIn={
                 user => this.onLoggedIn(user)} />
         </div>
 

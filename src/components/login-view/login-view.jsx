@@ -4,6 +4,7 @@ import { RegistrationView } from '../registration-view/registration-view';
 import { Navbar, Container, Nav, Form, Button, Card, Container, Row, Col } from 'react-bootstrap';
 import './login-view.scss';
 import axios from 'axios';
+import { propTypes } from 'react-bootstrap/esm/Image';
 
 
 // setting state of username and password as empty by default
@@ -13,8 +14,17 @@ export function LoginView(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(username, password);
-        props.onLoggedIn(username);
+        axios.post('https://busch-movie-api.herokuapp.com/login', {
+            Username: username,
+            Password: password
+        })
+            .then(response => {
+                const data = response.data;
+                props.onLoggedIn(data);
+            })
+            .catch(e => {
+                console.log('no such user')
+            });
     }
 
     return (
