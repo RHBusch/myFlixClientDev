@@ -77,7 +77,7 @@ export class MainView extends React.Component {    // The following code actuall
 
 
         if (!user) return <div>
-            <LoginView onLoggedIn={
+            <RegistrationView onLoggedIn={
                 user => this.onLoggedIn(user)} />
         </div>
 
