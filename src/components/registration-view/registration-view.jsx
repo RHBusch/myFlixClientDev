@@ -3,6 +3,7 @@ import { array } from 'prop-types';
 import React, { useState } from 'react';
 import { Navbar, Container, Nav, Form, Button, Card, Container, Row, Col } from 'react-bootstrap';
 import './registration-view.scss';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // setting state of username and password as empty by default
 export function RegistrationView(props) {
