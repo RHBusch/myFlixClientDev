@@ -10,6 +10,7 @@ import { render } from 'react-dom';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Navbar, Container } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import './main-view.scss';
 
 
@@ -72,7 +73,6 @@ export class MainView extends React.Component {    // The following code actuall
             })
     }
 
-
     render() { //The render () function is what returns the visual state of the component. Only one root element allowed. 
         const { movies, movie, selectedMovie, user } = this.state;
 
@@ -105,9 +105,9 @@ export class MainView extends React.Component {    // The following code actuall
                             ))
                         }} />
 
-                        <Route exact path="/movies/:movieId" render={({ match }) => {
+                        <Route exact path="/movies/:movieId" render={({ match, history }) => {
                             return <Col md={8}>
-                                <MovieView movie={movies.find(m => m._id === match.params.movieId)} />
+                                <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()} />
                             </Col>
                         }} />
 
