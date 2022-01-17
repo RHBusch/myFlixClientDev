@@ -1,4 +1,5 @@
 import React from 'react'; // Making React available to create components. 
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { MovieCard } from '../movie-card/movie-card';
 import PropTypes from 'prop-types'
 import { MovieView } from '../movie-view/movie-view';
