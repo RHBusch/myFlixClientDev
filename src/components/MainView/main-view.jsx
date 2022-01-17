@@ -94,7 +94,9 @@ export class MainView extends React.Component {    // The following code actuall
                     </Container>
                 </Navbar>
                 <Router>
+
                     <Row className="main-view justify-content-md-center" style={{ marginTop: 100, marginBottom: 100 }}>
+
                         <Route exact path="/" render={() => {
                             return movies.map(m => (
                                 <Col md={3} key={m._id}>
@@ -102,12 +104,25 @@ export class MainView extends React.Component {    // The following code actuall
                                 </Col>
                             ))
                         }} />
-                        <Route path="/movies/:movieId" render={({ match }) => {
+
+                        <Route exact path="/movies/:movieId" render={({ match }) => {
                             return <Col md={8}>
                                 <MovieView movie={movies.find(m => m._id === match.params.movieId)} />
                             </Col>
                         }} />
 
+                        <Route exact path="/movies/genre/:Name" render={({ match }) => {
+                            return <Col md={8}>
+                                <MovieView movie={movies.find(m => m._id === match.params.movieId)} />
+                            </Col>
+                        }} />
+
+                        <Route exact path="/movies/director/:Name" render={({ match }) => {
+                            if (movies.length === 0) return <div className="main-view" />
+                            return <Col md={8}>
+                                <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} />
+                            </Col>
+                        }} />
                     </Row>
                 </Router>
             </div>
