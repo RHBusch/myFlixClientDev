@@ -8,7 +8,7 @@ import './movie-card.scss'
 
 export class MovieCard extends React.Component {
     render() {
-        const { movie, onMovieClick } = this.props;
+        const { movie } = this.props;
 
 
 
@@ -46,5 +46,5 @@ MovieCard.propTypes = {
         }),
         Featured: PropTypes.bool.isRequired
     }).isRequired,
-    onMovieClick: PropTypes.func.isRequired //props object must contain onMovieclick and it must be a function
+    //onMovieClick: PropTypes.func.isRequired //props object must contain onMovieclick and it must be a function
 };
