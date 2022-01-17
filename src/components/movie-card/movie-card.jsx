@@ -46,5 +46,4 @@ MovieCard.propTypes = {
         }),
         Featured: PropTypes.bool.isRequired
     }).isRequired,
-    //onMovieClick: PropTypes.func.isRequired //props object must contain onMovieclick and it must be a function
 };

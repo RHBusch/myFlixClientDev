@@ -95,54 +95,22 @@ export class MainView extends React.Component {    // The following code actuall
                 </Navbar>
                 <Router>
                     <Row className="main-view justify-content-md-center" style={{ marginTop: 100, marginBottom: 100 }}>
-                        <Routes>
-                            <Route path="/" element={<MovieCard />} render={() => {
-                                return movies.map(m => (
-                                    <Col md={3} key={m._id}>
-                                        <MovieCard movie={m} />
-                                    </Col>
-                                ))
-                            }} />
-                            <Route path="/movies/:movieId" element={<MovieView />} render={({ match }) => {
-                                return <Col md={8}>
-                                    <MovieView movie={movies.find(m => m._id === match.params.movieId)} />
+                        <Route exact path="/" render={() => {
+                            return movies.map(m => (
+                                <Col md={3} key={m._id}>
+                                    <MovieCard movie={m} />
                                 </Col>
-                            }} />
-                        </Routes>
+                            ))
+                        }} />
+                        <Route path="/movies/:movieId" render={({ match }) => {
+                            return <Col md={8}>
+                                <MovieView movie={movies.find(m => m._id === match.params.movieId)} />
+                            </Col>
+                        }} />
+
                     </Row>
                 </Router>
             </div>
         );
     }
 }
-           /* <div>
-
-<Navbar fixed="top" bg="dark" variant="dark" className="mainNavigation" expand="lg">
-<Container>
-<Navbar.Brand className="navText" href="#home">
-<span>my</span><span class="flixColor">Flix</span><span>App</span>
-</Navbar.Brand>
-</Container>
-</Navbar>
-
-
-<Row className="main-view justify-content-md-center" style={{ marginTop: 100, marginBottom: 100 }}>
-{selectedMovie
-? (
-<Col md={8}>
-<MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
-</Col>
-)
-:
-
-movies.map(movie => (
-<Col md={3}>
-<MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }} />
-</Col>
-))
-}
-</Row>
-</div>
-)
-}
-}*/
