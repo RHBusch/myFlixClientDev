@@ -1,4 +1,5 @@
 import React from 'react'; // Making React available to create components. 
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { MovieCard } from '../movie-card/movie-card';
 import PropTypes from 'prop-types'
 import { MovieView } from '../movie-view/movie-view';
@@ -9,6 +10,7 @@ import { render } from 'react-dom';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Navbar, Container } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import './main-view.scss';
 
 
@@ -71,22 +73,19 @@ export class MainView extends React.Component {    // The following code actuall
             })
     }
 
-
     render() { //The render () function is what returns the visual state of the component. Only one root element allowed. 
-        const { movies, selectedMovie, user, registered } = this.state;
+        const { movies, movie, selectedMovie, user } = this.state;
 
 
         if (!user) return <div>
-            <RegistrationView onLoggedIn={
+            <LoginView onLoggedIn={
                 user => this.onLoggedIn(user)} />
         </div>
 
         if (movies.length === 0) return <div className="main-view"> The list is empty!</div>
 
         return (
-
             <div>
-
                 <Navbar fixed="top" bg="dark" variant="dark" className="mainNavigation" expand="lg">
                     <Container>
                         <Navbar.Brand className="navText" href="#home">
@@ -94,25 +93,39 @@ export class MainView extends React.Component {    // The following code actuall
                         </Navbar.Brand>
                     </Container>
                 </Navbar>
+                <Router>
 
+                    <Row className="main-view justify-content-md-center" style={{ marginTop: 100, marginBottom: 100 }}>
 
-                <Row className="main-view justify-content-md-center" style={{ marginTop: 100, marginBottom: 100 }}>
-                    {selectedMovie
-                        ? (
-                            <Col md={8}>
-                                <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
+                        <Route exact path="/" render={() => {
+                            return movies.map(m => (
+                                <Col md={3} key={m._id}>
+                                    <MovieCard movie={m} />
+                                </Col>
+                            ))
+                        }} />
+
+                        <Route exact path="/movies/:movieId" render={({ match, history }) => {
+                            return <Col md={8}>
+                                <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()} />
                             </Col>
-                        )
-                        :
+                        }} />
 
-                        movies.map(movie => (
-                            <Col md={3}>
-                                <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }} />
+                        <Route exact path="/movies/genre/:Name" render={({ match }) => {
+                            return <Col md={8}>
+                                <MovieView movie={movies.find(m => m._id === match.params.movieId)} />
                             </Col>
-                        ))
-                    }
-                </Row>
+                        }} />
+
+                        <Route exact path="/movies/director/:Name" render={({ match }) => {
+                            if (movies.length === 0) return <div className="main-view" />
+                            return <Col md={8}>
+                                <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} />
+                            </Col>
+                        }} />
+                    </Row>
+                </Router>
             </div>
-        )
+        );
     }
 }

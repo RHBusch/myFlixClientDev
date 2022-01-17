@@ -23,7 +23,7 @@ export class MovieView extends React.Component {
                             <Card.Body className="movieViewCardStyle">
                                 <Card.Title>{movie.Title}</Card.Title>
                                 <Card.Text>{movie.Description}</Card.Text>
-                                <Button className="movieViewButton" onClick={() => onBackClick(null)} variant="light">Back</Button>
+                                <Button className="movieViewButton" onClick={() => onBackClick()} variant="light">Back</Button>
                             </Card.Body>
                         </Card>
                     </Col>
