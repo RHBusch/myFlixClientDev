@@ -6,11 +6,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './movie-card.scss'
 
-import { Link } from "react-router-dom"
-
 export class MovieCard extends React.Component {
     render() {
-        const { movie } = this.props;
+        const { movie, onMovieClick } = this.props;
+
+
 
         return (
             <Card>
@@ -18,9 +18,7 @@ export class MovieCard extends React.Component {
                 <Card.Body className="movieCardBodyStyle">
                     <Card.Title>{movie.Title}</Card.Title>
                     <Card.Text>{movie.Description}</Card.Text>
-                    <Link to={`/movies/${movie._id}`}>
-                        <Button className="movieCardButton" variant="link">Open</Button>
-                    </Link>
+                    <Button className="movieCardButton" onClick={() => onMovieClick(movie)} variant="light">Open</Button>
                 </Card.Body>
             </Card>
         )
@@ -47,5 +45,6 @@ MovieCard.propTypes = {
             Death: PropTypes.number.isRequired,
         }),
         Featured: PropTypes.bool.isRequired
-    }).isRequired
+    }).isRequired,
+    onMovieClick: PropTypes.func.isRequired //props object must contain onMovieclick and it must be a function
 };
