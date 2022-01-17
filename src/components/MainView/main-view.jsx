@@ -10,6 +10,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Navbar, Container } from 'react-bootstrap';
 import './main-view.scss';
+import { BrowserRouter as Router } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 
 
@@ -73,11 +75,12 @@ export class MainView extends React.Component {    // The following code actuall
 
 
     render() { //The render () function is what returns the visual state of the component. Only one root element allowed. 
-        const { movies, selectedMovie, user, registered } = this.state;
+        const { selectedMovie, user, registered } = this.state;
+        const { movies } = this.props
 
 
         if (!user) return <div>
-            <RegistrationView onLoggedIn={
+            <LoginView onLoggedIn={
                 user => this.onLoggedIn(user)} />
         </div>
 
@@ -85,8 +88,7 @@ export class MainView extends React.Component {    // The following code actuall
 
         return (
 
-            <div>
-
+            <Router>
                 <Navbar fixed="top" bg="dark" variant="dark" className="mainNavigation" expand="lg">
                     <Container>
                         <Navbar.Brand className="navText" href="#home">
@@ -95,24 +97,23 @@ export class MainView extends React.Component {    // The following code actuall
                     </Container>
                 </Navbar>
 
-
                 <Row className="main-view justify-content-md-center" style={{ marginTop: 100, marginBottom: 100 }}>
-                    {selectedMovie
-                        ? (
-                            <Col md={8}>
-                                <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
+                    <Routes>
+                        <Route exact path="/" element={<MovieCard />} render={() => {
+                            return movies.map(m => (
+                                <Col md={3} key={m._id}>
+                                    <MovieCard movie={m} />
+                                </Col>
+                            ))
+                        }} />
+                        <Route path="/movies/:movieId" element={<MovieView />} render={({ match }) => {
+                            return <Col md={8}>
+                                <MovieView movie={movies.find(m => m._id === match.params.movieId)} />
                             </Col>
-                        )
-                        :
-
-                        movies.map(movie => (
-                            <Col md={3}>
-                                <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }} />
-                            </Col>
-                        ))
-                    }
+                        }} />
+                    </Routes>
                 </Row>
-            </div>
-        )
+            </Router>
+        );
     }
 }
