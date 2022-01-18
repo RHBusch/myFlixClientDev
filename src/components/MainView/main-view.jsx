@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { MovieCard } from '../movie-card/movie-card';
 import PropTypes from 'prop-types'
 import { MovieView } from '../movie-view/movie-view';
+import { DirectorView } from '../director-view/director-view';
+import { GenreView } from '../genre-view/genre-view';
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import axios from 'axios';
@@ -78,7 +80,7 @@ export class MainView extends React.Component {    // The following code actuall
 
 
         if (!user) return <div>
-            <LoginView onLoggedIn={
+            <GenreView onLoggedIn={
                 user => this.onLoggedIn(user)} />
         </div>
 
@@ -120,7 +122,7 @@ export class MainView extends React.Component {    // The following code actuall
                         <Route exact path="/movies/director/:Name" render={({ match }) => {
                             if (movies.length === 0) return <div className="main-view" />
                             return <Col md={8}>
-                                <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} />
+                                <DirectorView Director={movies.find(m => m.Director.Name === match.params.Name).Director} />
                             </Col>
                         }} />
                     </Row>
