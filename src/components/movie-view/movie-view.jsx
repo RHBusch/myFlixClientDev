@@ -21,7 +21,7 @@ export class MovieView extends React.Component {
                         <Card style={{ marginTop: 100, marginBottom: 100, width: 300 }}>
                             <Card.Img variant="top" src={movie.ImagePath} />
                             <Card.Body className="movieViewCardStyle">
-                                <Card.Title>{movie.Title}</Card.Title>
+                                <Card.Title>{movie.Director.Name}</Card.Title>
                                 <Card.Text>{movie.Description}</Card.Text>
                                 <Button className="movieViewButton" onClick={() => onBackClick()} variant="light">Back</Button>
                             </Card.Body>

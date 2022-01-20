@@ -76,8 +76,8 @@ export class MainView extends React.Component {    // The following code actuall
     }
 
     render() { //The render () function is what returns the visual state of the component. Only one root element allowed. 
-        const { user } = this.state;
-        const { movies } = this.props
+        const { movies, movie, selectedMovie, user } = this.state;
+
 
 
 
@@ -124,7 +124,7 @@ export class MainView extends React.Component {    // The following code actuall
                         <Route exact path="/movies/director/:Name" render={({ match, history }) => {
                             if (movies.length === 0) return <div className="main-view" />
                             return <Col md={8}>
-                                <DirectorView director={movies.find(m => m.Director.Name === match.params.Name).Director} />
+                                <DirectorView movie={movies.find(m => m.Director.Name === match.params.directorName)} />
                             </Col>
                         }} />
                     </Row>
