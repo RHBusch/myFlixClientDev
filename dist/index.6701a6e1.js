@@ -23150,8 +23150,11 @@ class MainView extends _reactDefault.default.Component {
                                     return(/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                                         md: 8,
                                         children: /*#__PURE__*/ _jsxRuntime.jsx(_directorView.DirectorView, {
-                                            movie: movies.find((m)=>m.Director.Name === match.params.directorName
-                                            )
+                                            movie: movies.find((m)=>m.Director.Name === match.params.DirectorName
+                                            ),
+                                            onBackClick: ()=>history.goBack()
+                                            ,
+                                            movies: movies
                                         })
                                     }));
                                 },
