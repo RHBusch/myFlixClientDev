@@ -17,7 +17,7 @@ export class DirectorView extends React.Component {
                         <Card style={{ marginTop: 100, marginBottom: 100, width: 300 }}>
 
                             <Card.Body className="movieViewCardStyle">
-                                <Card.Title>{movie.Director.Name}</Card.Title>
+                                <Card.Title>{movie.Director.Bio}</Card.Title>
                                 <Card.Text>{movie.Description}</Card.Text>
                                 <Button className="movieViewButton" onClick={() => onBackClick()} variant="light">Back</Button>
                             </Card.Body>
