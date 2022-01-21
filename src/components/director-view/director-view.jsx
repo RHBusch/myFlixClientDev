@@ -8,7 +8,7 @@ import { MovieCard } from '../movie-card/movie-card';
 export class DirectorView extends React.Component {
 
     render() {
-        const { movie, onBackClick, Director } = this.props;
+        const { onBackClick, Director } = this.props;
         return (
 
             <Container>
@@ -18,8 +18,8 @@ export class DirectorView extends React.Component {
                         <Card style={{ marginTop: 100, marginBottom: 100, width: 300 }}>
 
                             <Card.Body className="movieViewCardStyle">
-                                <Card.Title>{movie.Director.Name}</Card.Title>
-                                <Card.Text>{movie.Director.Bio}</Card.Text>
+                                <Card.Title>{Director.Name}</Card.Title>
+                                <Card.Text>{Director.Bio}</Card.Text>
                                 <Button className="movieViewButton" onClick={() => onBackClick()} variant="light">Back</Button>
                             </Card.Body>
                         </Card>
