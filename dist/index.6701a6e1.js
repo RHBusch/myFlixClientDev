@@ -23159,10 +23159,10 @@ class MainView extends _reactDefault.default.Component {
                                         md: 8,
                                         children: /*#__PURE__*/ _jsxRuntime.jsx(_directorView.DirectorView, {
                                             Director: movies.find((m)=>m.Director.Name === match.params.Name
-                                            ),
+                                            ).Director,
                                             onBackClick: ()=>history.goBack()
                                             ,
-                                            movies: movies
+                                            movie: movies
                                         })
                                     }));
                                 },
@@ -38173,7 +38173,7 @@ var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _reactBootstrap = require("react-bootstrap");
-var _reactDom = require("react-dom");
+var _movieCard = require("../movie-card/movie-card");
 class DirectorView extends _reactDefault.default.Component {
     render() {
         const { movie , onBackClick , Director  } = this.props;
@@ -38228,7 +38228,7 @@ class DirectorView extends _reactDefault.default.Component {
                                             lineNumber: 20
                                         },
                                         __self: this,
-                                        children: movie.Director.Bio
+                                        children: movie.Director.Name
                                     }),
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Text, {
                                         __source: {
@@ -38236,7 +38236,7 @@ class DirectorView extends _reactDefault.default.Component {
                                             lineNumber: 21
                                         },
                                         __self: this,
-                                        children: movie.Description
+                                        children: movie.Director.Description
                                     }),
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
                                         className: "movieViewButton",
@@ -38266,13 +38266,19 @@ class DirectorView extends _reactDefault.default.Component {
         }));
     }
 }
+DirectorView.proptypes = {
+    Director: _propTypesDefault.default.shape({
+        Name: _propTypesDefault.default.string.isRequired,
+        Bio: _propTypesDefault.default.string
+    }).isRequired
+};
 
   $parcel$ReactRefreshHelpers$f8cc.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap/Button":"9CzHT","react-bootstrap":"h2YVd","react-dom":"gkWJK","@parcel/transformer-js/src/esmodule-helpers.js":"fp0v4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cG54J"}],"8WCoL":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap/Button":"9CzHT","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"fp0v4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cG54J","../movie-card/movie-card":"6EiBJ"}],"8WCoL":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5f0a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
