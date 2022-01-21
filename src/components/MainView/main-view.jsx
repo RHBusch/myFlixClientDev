@@ -124,7 +124,7 @@ export class MainView extends React.Component {    // The following code actuall
                         <Route exact path="/movies/director/:Name" render={({ match, history }) => {
                             if (movies.length === 0) return <div className="main-view" />
                             return <Col md={8}>
-                                <DirectorView Director={movies.find(m => m.Director.Name === match.params.Name).Director} onBackClick={() => history.goBack()} movie={movies} />
+                                <DirectorView Director={movies.find(m => m.Director.Name === match.params.Name).Director} onBackClick={() => history.goBack()} />
                             </Col>
                         }} />
                     </Row>

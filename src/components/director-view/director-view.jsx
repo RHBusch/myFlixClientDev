@@ -10,6 +10,7 @@ export class DirectorView extends React.Component {
     render() {
         const { movie, onBackClick, Director } = this.props;
         return (
+
             <Container>
                 <Row>
                     <Col></Col>
@@ -18,7 +19,7 @@ export class DirectorView extends React.Component {
 
                             <Card.Body className="movieViewCardStyle">
                                 <Card.Title>{movie.Director.Name}</Card.Title>
-                                <Card.Text>{movie.Director.Description}</Card.Text>
+                                <Card.Text>{movie.Director.Bio}</Card.Text>
                                 <Button className="movieViewButton" onClick={() => onBackClick()} variant="light">Back</Button>
                             </Card.Body>
                         </Card>
@@ -36,3 +37,4 @@ DirectorView.proptypes = {
         Bio: PropTypes.string,
     }).isRequired,
 };
+
