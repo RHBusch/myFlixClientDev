@@ -22994,7 +22994,7 @@ class MainView extends _reactDefault.default.Component {
                 lineNumber: 84
             },
             __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsx(_directorView.DirectorView, {
+            children: /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
                 onLoggedIn: (user1)=>this.onLoggedIn(user1)
                 ,
                 __source: {
@@ -26961,6 +26961,23 @@ class MovieView extends _reactDefault.default.Component {
                                             },
                                             __self: this,
                                             children: "Back"
+                                        }),
+                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Link, {
+                                            to: `movies/director/${movie.Director.Name}`,
+                                            __source: {
+                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                lineNumber: 27
+                                            },
+                                            __self: this,
+                                            children: /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                                className: "value",
+                                                __source: {
+                                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                                    lineNumber: 28
+                                                },
+                                                __self: this,
+                                                children: movie.Director.Name
+                                            })
                                         })
                                     ]
                                 })
@@ -26970,7 +26987,7 @@ class MovieView extends _reactDefault.default.Component {
                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 30
+                            lineNumber: 34
                         },
                         __self: this
                     })

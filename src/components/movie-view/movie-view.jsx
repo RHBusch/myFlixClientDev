@@ -2,7 +2,7 @@ import React from 'react';
 import './movie-view'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import { Col, Row, Container } from 'react-bootstrap'
+import { Col, Row, Container, Link } from 'react-bootstrap'
 import './movie-view.scss'
 
 
@@ -24,12 +24,16 @@ export class MovieView extends React.Component {
                                 <Card.Title>{movie.Director.Name}</Card.Title>
                                 <Card.Text>{movie.Description}</Card.Text>
                                 <Button className="movieViewButton" onClick={() => onBackClick()} variant="light">Back</Button>
+                                <Link to={`movies/director/${movie.Director.Name}`}>
+                                    <span className="value">{movie.Director.Name}</span>
+                                </Link>
+
                             </Card.Body>
                         </Card>
                     </Col>
                     <Col></Col>
                 </Row>
-            </Container>
+            </Container >
         )
         // ^^^ The onBackClick button above will need to have new code added to actually point it in a direction. 
 

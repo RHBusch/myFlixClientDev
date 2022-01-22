@@ -11,7 +11,7 @@ import axios from 'axios';
 import { render } from 'react-dom';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Navbar, Container } from 'react-bootstrap';
+import { Navbar, Container, Link } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import './main-view.scss';
 
@@ -82,7 +82,7 @@ export class MainView extends React.Component {    // The following code actuall
 
 
         if (!user) return <div>
-            <DirectorView onLoggedIn={
+            <LoginView onLoggedIn={
                 user => this.onLoggedIn(user)} />
         </div>
 
