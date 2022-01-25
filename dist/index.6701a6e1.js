@@ -22980,32 +22980,12 @@ class MainView extends _reactDefault.default.Component {
     }
     render() {
         const { movies , movie , selectedMovie , user  } = this.state;
-        if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
-            __source: {
-                fileName: "src/components/MainView/main-view.jsx",
-                lineNumber: 84
-            },
-            __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
-                onLoggedIn: (user1)=>this.onLoggedIn(user1)
-                ,
-                __source: {
-                    fileName: "src/components/MainView/main-view.jsx",
-                    lineNumber: 85
-                },
-                __self: this
-            })
-        }));
-        if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
-            className: "main-view",
-            __source: {
-                fileName: "src/components/MainView/main-view.jsx",
-                lineNumber: 89
-            },
-            __self: this,
-            children: " The list is empty!"
-        }));
-        return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+        /* if (!user) return <div>
+             <LoginView onLoggedIn={
+                 user => this.onLoggedIn(user)} />
+         </div>
+ 
+         if (movies.length === 0) return <div className="main-view"> The list is empty!</div>*/ return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
             __source: {
                 fileName: "src/components/MainView/main-view.jsx",
                 lineNumber: 92
@@ -23089,6 +23069,11 @@ class MainView extends _reactDefault.default.Component {
                                 exact: true,
                                 path: "/",
                                 render: ()=>{
+                                    if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                        children: /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
+                                            onLoggedIn: (user1)=>this.onLoggedIn(user1)
+                                        })
+                                    }));
                                     return movies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                                             md: 3,
                                             children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -23100,6 +23085,21 @@ class MainView extends _reactDefault.default.Component {
                                 __source: {
                                     fileName: "src/components/MainView/main-view.jsx",
                                     lineNumber: 104
+                                },
+                                __self: this
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                                exact: true,
+                                path: "/register",
+                                render: ()=>{
+                                    return(/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                        children: /*#__PURE__*/ _jsxRuntime.jsx(_registrationView.RegistrationView, {
+                                        })
+                                    }));
+                                },
+                                __source: {
+                                    fileName: "src/components/MainView/main-view.jsx",
+                                    lineNumber: 114
                                 },
                                 __self: this
                             }),
@@ -23118,7 +23118,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/MainView/main-view.jsx",
-                                    lineNumber: 112
+                                    lineNumber: 119
                                 },
                                 __self: this
                             }),
@@ -23137,7 +23137,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/MainView/main-view.jsx",
-                                    lineNumber: 118
+                                    lineNumber: 125
                                 },
                                 __self: this
                             }),
@@ -23159,7 +23159,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/MainView/main-view.jsx",
-                                    lineNumber: 124
+                                    lineNumber: 131
                                 },
                                 __self: this
                             })

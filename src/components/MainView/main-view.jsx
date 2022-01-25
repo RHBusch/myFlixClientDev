@@ -81,12 +81,12 @@ export class MainView extends React.Component {    // The following code actuall
 
 
 
-        if (!user) return <div>
-            <LoginView onLoggedIn={
-                user => this.onLoggedIn(user)} />
-        </div>
-
-        if (movies.length === 0) return <div className="main-view"> The list is empty!</div>
+        /* if (!user) return <div>
+             <LoginView onLoggedIn={
+                 user => this.onLoggedIn(user)} />
+         </div>
+ 
+         if (movies.length === 0) return <div className="main-view"> The list is empty!</div>*/
 
         return (
             <div>
@@ -102,13 +102,20 @@ export class MainView extends React.Component {    // The following code actuall
                     <Row className="main-view justify-content-md-center" style={{ marginTop: 100, marginBottom: 100 }}>
 
                         <Route exact path="/" render={() => {
+                            if (!user) return <Col>
+                                <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+                            </Col>
                             return movies.map(m => (
                                 <Col md={3} key={m._id}>
                                     <MovieCard movie={m} />
                                 </Col>
                             ))
                         }} />
-
+                        <Route exact path="/register" render={() => {
+                            return <Col>
+                                <RegistrationView />
+                            </Col>
+                        }} />
                         <Route exact path="/movies/:movieId" render={({ match, history }) => {
                             return <Col md={8}>
                                 <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()} />
