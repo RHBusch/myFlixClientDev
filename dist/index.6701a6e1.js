@@ -22902,15 +22902,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 //Exposing MainView componenet for other future components. 
 parcelHelpers.export(exports, "MainView", ()=>MainView
-) /*
-<DirectorView Director={movies.find(m => m.Director.Name === match.params.Name).Director} onBackClick={() => history.goBack()} movies={movies} />
-Uncaught TypeError: Cannot read properties of undefined (reading 'Director')
-
- <DirectorView movie={movies.find(m => m.Director.Name === match.params.Name).Director} onBackClick={() => history.goBack()} movies={movies} />
-Uncaught TypeError: Cannot read properties of undefined (reading 'Director')
-
-
-*/ ;
+);
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react"); // Making React available to create components. 
 var _reactDefault = parcelHelpers.interopDefault(_react);
@@ -23132,7 +23124,7 @@ class MainView extends _reactDefault.default.Component {
                             }),
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
                                 exact: true,
-                                path: "/movies/genre/:Name",
+                                path: "/movies/movies/genre/:Name",
                                 render: ({ match , history  })=>{
                                     return(/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                                         md: 8,
@@ -23150,7 +23142,7 @@ class MainView extends _reactDefault.default.Component {
                             }),
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
                                 exact: true,
-                                path: "/movies/director/:Name",
+                                path: "/movies/movies/director/:Name",
                                 render: ({ match , history  })=>{
                                     if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
                                         className: "main-view"

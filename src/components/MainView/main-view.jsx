@@ -115,13 +115,13 @@ export class MainView extends React.Component {    // The following code actuall
                             </Col>
                         }} />
 
-                        <Route exact path="/movies/genre/:Name" render={({ match, history }) => {
+                        <Route exact path="/movies/movies/genre/:Name" render={({ match, history }) => {
                             return <Col md={8}>
                                 <GenreView movie={movies.find(m => m._id === match.params.movieId)} />
                             </Col>
                         }} />
 
-                        <Route exact path="/movies/director/:Name" render={({ match, history }) => {
+                        <Route exact path="/movies/movies/director/:Name" render={({ match, history }) => {
                             if (movies.length === 0) return <div className="main-view" />
                             return <Col md={8}>
                                 <DirectorView Director={movies.find(m => m.Director.Name === match.params.Name).Director} onBackClick={() => history.goBack()} />
@@ -133,12 +133,4 @@ export class MainView extends React.Component {    // The following code actuall
         );
     }
 }
-/*
-<DirectorView Director={movies.find(m => m.Director.Name === match.params.Name).Director} onBackClick={() => history.goBack()} movies={movies} />
-Uncaught TypeError: Cannot read properties of undefined (reading 'Director')
 
- <DirectorView movie={movies.find(m => m.Director.Name === match.params.Name).Director} onBackClick={() => history.goBack()} movies={movies} />
-Uncaught TypeError: Cannot read properties of undefined (reading 'Director')
-
-
-*/
