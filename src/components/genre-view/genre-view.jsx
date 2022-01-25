@@ -14,8 +14,8 @@ export class GenreView extends React.Component {
                 <Col>
                     <Card style={{ marginTop: 100, marginBottom: 100, width: 300 }}>
                         <Card.Body className="movieViewCardStyle">
-                            <Card.Title style={{ textAlign: 'center' }}>{genre.Name}</Card.Title>
-                            <Card.Text>{movie.Description}</Card.Text>
+                            <Card.Title style={{ textAlign: 'center' }}>{Genre.Name}</Card.Title>
+                            <Card.Text>{Genre.Description}</Card.Text>
                             <Button className="movieViewButton" onClick={() => onBackClick()} variant="light">Back</Button>
                         </Card.Body>
                     </Card>

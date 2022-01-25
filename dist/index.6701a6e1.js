@@ -23129,8 +23129,9 @@ class MainView extends _reactDefault.default.Component {
                                     return(/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                                         md: 8,
                                         children: /*#__PURE__*/ _jsxRuntime.jsx(_genreView.GenreView, {
-                                            movie: movies.find((m)=>m._id === match.params.movieId
-                                            )
+                                            Genre: movies.find((m)=>m.Genre.Name === match.params.Name
+                                            ).Genre,
+                                            onBackClick: ()=>history.goBack()
                                         })
                                     }));
                                 },
@@ -38382,7 +38383,7 @@ class GenreView extends _reactDefault.default.Component {
                                             lineNumber: 17
                                         },
                                         __self: this,
-                                        children: genre.Name
+                                        children: Genre.Name
                                     }),
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Text, {
                                         __source: {
@@ -38390,7 +38391,7 @@ class GenreView extends _reactDefault.default.Component {
                                             lineNumber: 18
                                         },
                                         __self: this,
-                                        children: movie.Description
+                                        children: Genre.Description
                                     }),
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
                                         className: "movieViewButton",
