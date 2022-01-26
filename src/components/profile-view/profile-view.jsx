@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Route, Routes, Redirect, Link } from "react-router-dom";
 import axios from 'axios';
 
-export function LoginView(props) {
+export function ProfileView(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
@@ -14,6 +14,27 @@ export function LoginView(props) {
     const [usernameErr, setUsernameErr] = useState('');
     const [passwordErr, setPasswordErr] = useState('');
     const [birthday, setBirthday] = useState('');
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        axios.put('https://busch-movie-api.herokuapp.com/users/Username'), {
+            Username: username,
+            Password: password,
+            Email: email,
+            Birthday: birthday,
+        }, {
+            headers: { Authorization: `Bearer ${token}` }
+        }
+            .then(reponse => {
+                console.log(response.data);
+                setUsername(response.data);
+                window.open('/', '_self')
+            })
+            .catch(e => { console.log('error updating user details') })
+
+    }
 }
 
 /*Begin by detailing all logic for axios requests. Use login and registration examples for setting up the 

@@ -40736,7 +40736,7 @@ $parcel$ReactRefreshHelpers$58c6.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "LoginView", ()=>LoginView
+parcelHelpers.export(exports, "ProfileView", ()=>ProfileView
 ) /*Begin by detailing all logic for axios requests. Use login and registration examples for setting up the 
 details for updating a user's information + a handleSubmit function. Don't worry too much about the 
 profileview button. That can come later, and likely in the NavBar. The logic will be more important for now. You will need to build a form to
@@ -40756,7 +40756,7 @@ var _reactRouterDom = require("react-router-dom");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _s = $RefreshSig$();
-function LoginView(props) {
+function ProfileView(props) {
     _s();
     const [username, setUsername] = _react.useState('');
     const [password, setPassword] = _react.useState('');
@@ -40765,11 +40765,25 @@ function LoginView(props) {
     const [usernameErr, setUsernameErr] = _react.useState('');
     const [passwordErr, setPasswordErr] = _react.useState('');
     const [birthday, setBirthday] = _react.useState('');
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        _axiosDefault.default.put('https://busch-movie-api.herokuapp.com/users/Username'), ({
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((reponse)=>{
+            console.log(response.data);
+            setUsername(response.data);
+            window.open('/', '_self');
+        }).catch((e1)=>{
+            console.log('error updating user details');
+        });
+    };
 }
-_s(LoginView, "H0wmLB/EThFNhRm/b76zPYa9i+I=");
-_c = LoginView;
+_s(ProfileView, "H0wmLB/EThFNhRm/b76zPYa9i+I=");
+_c = ProfileView;
 var _c;
-$RefreshReg$(_c, "LoginView");
+$RefreshReg$(_c, "ProfileView");
 
   $parcel$ReactRefreshHelpers$58c6.postlude(module);
 } finally {
