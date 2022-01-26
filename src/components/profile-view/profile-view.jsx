@@ -15,6 +15,7 @@ export function ProfileView(props) {
     const [passwordErr, setPasswordErr] = useState('');
     const [birthday, setBirthday] = useState('');
 
+    //Creating code to update profile information handleSubmit. 
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -35,7 +36,28 @@ export function ProfileView(props) {
             .catch(e => { console.log('error updating user details') })
 
     }
+
+    const handleDelete = (e) => {
+        e.preventDefault();
+        axios.delete('https://busch-movie-api.herokuapp.com/users/remv/:Username'), {
+            headers: { Authorization: `Bearer ${token}` }
+        }
+            .then(response => {
+                console.log(response.data);
+                onLoggedOut()
+            })
+            .catch(e => {
+                console.log('unable to remove user')
+            });
+    }
 }
+
+
+
+
+
+
+
 
 /*Begin by detailing all logic for axios requests. Use login and registration examples for setting up the 
 details for updating a user's information + a handleSubmit function. Don't worry too much about the 
