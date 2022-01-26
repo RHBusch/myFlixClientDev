@@ -1,5 +1,5 @@
 import React from 'react'; // Making React available to create components. 
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Redirect, Link } from "react-router-dom";
 import { MovieCard } from '../movie-card/movie-card';
 import PropTypes from 'prop-types'
 import { MovieView } from '../movie-view/movie-view';
@@ -7,6 +7,7 @@ import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
+import { ProfileView } from '../profile-view/profile-view';
 import axios from 'axios';
 import { render } from 'react-dom';
 import Row from 'react-bootstrap/Row';
@@ -112,6 +113,7 @@ export class MainView extends React.Component {    // The following code actuall
                             ))
                         }} />
                         <Route exact path="/register" render={() => {
+                            if (user) return <Redirect to="/" />
                             return <Col>
                                 <RegistrationView />
                             </Col>
@@ -133,6 +135,16 @@ export class MainView extends React.Component {    // The following code actuall
                             return <Col md={8}>
                                 <DirectorView Director={movies.find(m => m.Director.Name === match.params.Name).Director} onBackClick={() => history.goBack()} />
                             </Col>
+                        }} />
+                        <Route exact path="/users/:Username" render={({ history, match }) => {
+                            if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+                            if (movies.length === 0) return <div className="main-view" />
+                            return <div> <ProfileView history={history} movies={movies}
+                                user={user === match.params.Username} />
+                                <Link to={`/users/${user.Username}`}>
+                                    <Button className="movieCardButton" variant="link">{user + " Profile"}</Button>
+                                </Link>
+                            </div>
                         }} />
                     </Row>
                 </Router>
