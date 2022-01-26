@@ -36,7 +36,7 @@ export function ProfileView(props) {
             .catch(e => { console.log('error updating user details') })
 
     }
-
+    //Creating code to delete a user - handleDelete. 
     const handleDelete = (e) => {
         e.preventDefault();
         axios.delete('https://busch-movie-api.herokuapp.com/users/remv/:Username'), {

@@ -40780,6 +40780,7 @@ function ProfileView(props) {
             console.log('error updating user details');
         });
     };
+    //Creating code to delete a user - handleDelete. 
     const handleDelete = (e)=>{
         e.preventDefault();
         _axiosDefault.default.delete('https://busch-movie-api.herokuapp.com/users/remv/:Username'), ({
