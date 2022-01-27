@@ -91,7 +91,9 @@ export class MainView extends React.Component {    // The following code actuall
                         </Navbar.Brand>
                         <Navbar.Collapse className="justify-content-end">
                             <Button onClick={() => this.onLoggedOut()} variant="dark" style={{ color: "#55fcfc" }}>Logout</Button>
-                            <Nav.Link id="Account" href={profile} style={{ color: "#55fcfc" }}>My Account</Nav.Link>
+                            <Link to={`users/${user}`}>
+
+                            </Link>
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>
@@ -139,7 +141,7 @@ export class MainView extends React.Component {    // The following code actuall
                             if (movies.length === 0) return <div className="main-view" />
                             return <div> <ProfileView history={history} movies={movies}
                                 user={user === match.params.Username} />
-                                <Link to={`/users/${user.Username}`}>
+                                <Link to={`users/${user}`}>
                                     <Button className="movieCardButton" variant="link">{user + " Profile"}</Button>
                                 </Link>
                             </div>
@@ -154,3 +156,5 @@ export class MainView extends React.Component {    // The following code actuall
 /*<Link to={`users/${user}`}>
                                 <Button className="movieCardButton" variant="link">{user}</Button>
                             </Link>*/
+
+                           // <Nav.Link id="Account" href={profile} style={{ color: "#55fcfc" }}>My Account</Nav.Link>
