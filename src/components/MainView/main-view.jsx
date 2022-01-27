@@ -79,16 +79,6 @@ export class MainView extends React.Component {    // The following code actuall
     render() { //The render () function is what returns the visual state of the component. Only one root element allowed. 
         const { movies, movie, selectedMovie, user } = this.state;
 
-
-
-
-        /* if (!user) return <div>
-             <LoginView onLoggedIn={
-                 user => this.onLoggedIn(user)} />
-         </div>
- 
-         if (movies.length === 0) return <div className="main-view"> The list is empty!</div>*/
-
         return (
             <div>
 
@@ -97,7 +87,9 @@ export class MainView extends React.Component {    // The following code actuall
                         <Navbar.Brand className="navText" href="#home">
                             <span>my</span><span class="flixColor">Flix</span><span>App</span>
                         </Navbar.Brand>
-
+                        <Navbar.Collapse className="justify-content-end">
+                            <Button onClick={() => this.onLoggedOut()} variant="dark" style={{ color: "#55fcfc" }}>Logout</Button>
+                        </Navbar.Collapse>
                     </Container>
                 </Navbar>
 
