@@ -20,7 +20,7 @@ export function ProfileView(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        axios.put('https://busch-movie-api.herokuapp.com/users/Username'), {
+        axios.put('https://busch-movie-api.herokuapp.com/users/Username'),{
             Username: username,
             Password: password,
             Email: email,
