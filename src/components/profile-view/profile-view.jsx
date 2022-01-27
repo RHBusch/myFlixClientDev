@@ -5,8 +5,12 @@ import { Col, Row, Container, } from 'react-bootstrap'
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Route, Routes, Redirect, Link } from "react-router-dom";
 import axios from 'axios';
+import { Navbar, Container, Link, Button, Nav } from 'react-bootstrap';
 
-export function ProfileView(props) {
+
+
+
+/*export function ProfileView(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
@@ -54,7 +58,7 @@ export function ProfileView(props) {
 
 
 
-
+*/
 
 
 

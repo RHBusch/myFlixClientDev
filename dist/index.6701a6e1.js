@@ -22902,7 +22902,9 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 //Exposing MainView componenet for other future components. 
 parcelHelpers.export(exports, "MainView", ()=>MainView
-);
+) /*<Link to={`users/${user}`}>
+                                <Button className="movieCardButton" variant="link">{user}</Button>
+                            </Link>*/ ;
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react"); // Making React available to create components. 
 var _reactDefault = parcelHelpers.interopDefault(_react);
@@ -22981,10 +22983,11 @@ class MainView extends _reactDefault.default.Component {
     }
     render() {
         const { movies , movie , selectedMovie , user  } = this.state;
+        const profile = `/users/${user}`;
         return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
             __source: {
                 fileName: "src/components/MainView/main-view.jsx",
-                lineNumber: 83
+                lineNumber: 85
             },
             __self: this,
             children: [
@@ -22996,13 +22999,13 @@ class MainView extends _reactDefault.default.Component {
                     expand: "lg",
                     __source: {
                         fileName: "src/components/MainView/main-view.jsx",
-                        lineNumber: 85
+                        lineNumber: 87
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
                         __source: {
                             fileName: "src/components/MainView/main-view.jsx",
-                            lineNumber: 86
+                            lineNumber: 88
                         },
                         __self: this,
                         children: [
@@ -23011,14 +23014,14 @@ class MainView extends _reactDefault.default.Component {
                                 href: "#home",
                                 __source: {
                                     fileName: "src/components/MainView/main-view.jsx",
-                                    lineNumber: 87
+                                    lineNumber: 89
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx("span", {
                                         __source: {
                                             fileName: "src/components/MainView/main-view.jsx",
-                                            lineNumber: 88
+                                            lineNumber: 90
                                         },
                                         __self: this,
                                         children: "my"
@@ -23027,7 +23030,7 @@ class MainView extends _reactDefault.default.Component {
                                         class: "flixColor",
                                         __source: {
                                             fileName: "src/components/MainView/main-view.jsx",
-                                            lineNumber: 88
+                                            lineNumber: 90
                                         },
                                         __self: this,
                                         children: "Flix"
@@ -23035,34 +23038,49 @@ class MainView extends _reactDefault.default.Component {
                                     /*#__PURE__*/ _jsxRuntime.jsx("span", {
                                         __source: {
                                             fileName: "src/components/MainView/main-view.jsx",
-                                            lineNumber: 88
+                                            lineNumber: 90
                                         },
                                         __self: this,
                                         children: "App"
                                     })
                                 ]
                             }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Collapse, {
+                            /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Navbar.Collapse, {
                                 className: "justify-content-end",
                                 __source: {
                                     fileName: "src/components/MainView/main-view.jsx",
-                                    lineNumber: 90
+                                    lineNumber: 92
                                 },
                                 __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                                    onClick: ()=>this.onLoggedOut()
-                                    ,
-                                    variant: "dark",
-                                    style: {
-                                        color: "#55fcfc"
-                                    },
-                                    __source: {
-                                        fileName: "src/components/MainView/main-view.jsx",
-                                        lineNumber: 91
-                                    },
-                                    __self: this,
-                                    children: "Logout"
-                                })
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                                        onClick: ()=>this.onLoggedOut()
+                                        ,
+                                        variant: "dark",
+                                        style: {
+                                            color: "#55fcfc"
+                                        },
+                                        __source: {
+                                            fileName: "src/components/MainView/main-view.jsx",
+                                            lineNumber: 93
+                                        },
+                                        __self: this,
+                                        children: "Logout"
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
+                                        id: "Account",
+                                        href: profile,
+                                        style: {
+                                            color: "#55fcfc"
+                                        },
+                                        __source: {
+                                            fileName: "src/components/MainView/main-view.jsx",
+                                            lineNumber: 94
+                                        },
+                                        __self: this,
+                                        children: "My Account"
+                                    })
+                                ]
                             })
                         ]
                     })
@@ -23070,7 +23088,7 @@ class MainView extends _reactDefault.default.Component {
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.BrowserRouter, {
                     __source: {
                         fileName: "src/components/MainView/main-view.jsx",
-                        lineNumber: 96
+                        lineNumber: 99
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
@@ -23081,7 +23099,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/MainView/main-view.jsx",
-                            lineNumber: 98
+                            lineNumber: 101
                         },
                         __self: this,
                         children: [
@@ -23104,7 +23122,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/MainView/main-view.jsx",
-                                    lineNumber: 100
+                                    lineNumber: 103
                                 },
                                 __self: this
                             }),
@@ -23122,7 +23140,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/MainView/main-view.jsx",
-                                    lineNumber: 110
+                                    lineNumber: 113
                                 },
                                 __self: this
                             }),
@@ -23141,7 +23159,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/MainView/main-view.jsx",
-                                    lineNumber: 116
+                                    lineNumber: 119
                                 },
                                 __self: this
                             }),
@@ -23160,7 +23178,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/MainView/main-view.jsx",
-                                    lineNumber: 122
+                                    lineNumber: 125
                                 },
                                 __self: this
                             }),
@@ -23182,7 +23200,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/MainView/main-view.jsx",
-                                    lineNumber: 128
+                                    lineNumber: 131
                                 },
                                 __self: this
                             }),
@@ -23217,7 +23235,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/MainView/main-view.jsx",
-                                    lineNumber: 134
+                                    lineNumber: 137
                                 },
                                 __self: this
                             })
@@ -40754,16 +40772,6 @@ $parcel$ReactRefreshHelpers$58c6.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "ProfileView", ()=>ProfileView
-) /*Begin by detailing all logic for axios requests. Use login and registration examples for setting up the 
-details for updating a user's information + a handleSubmit function. Don't worry too much about the 
-profileview button. That can come later, and likely in the NavBar. The logic will be more important for now. You will need to build a form to
- update this information. Add a user profile view to display user information and:
-Allow a user to update their user info (username, password, email, date of birth)
-Allow a user to deregister
-Display a user's favorite movies
-Allow a user to remove a movie from their list of favorites*/ ;
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _card = require("react-bootstrap/Card");
@@ -40774,50 +40782,6 @@ var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _s = $RefreshSig$();
-function ProfileView(props) {
-    _s();
-    const [username, setUsername] = _react.useState('');
-    const [password, setPassword] = _react.useState('');
-    const [email, setEmail] = _react.useState('');
-    const [emailErr, setEmailErr] = _react.useState('');
-    const [usernameErr, setUsernameErr] = _react.useState('');
-    const [passwordErr, setPasswordErr] = _react.useState('');
-    const [birthday, setBirthday] = _react.useState('');
-    //Creating code to update profile information handleSubmit. 
-    const handleSubmit = (e)=>{
-        e.preventDefault();
-        _axiosDefault.default.put('https://busch-movie-api.herokuapp.com/users/Username'), ({
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }).then((reponse)=>{
-            console.log(response.data);
-            setUsername(response.data);
-            window.open('/', '_self');
-        }).catch((e1)=>{
-            console.log('error updating user details');
-        });
-    };
-    //Creating code to delete a user - handleDelete. 
-    const handleDelete = (e)=>{
-        e.preventDefault();
-        _axiosDefault.default.delete('https://busch-movie-api.herokuapp.com/users/remv/:Username'), ({
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }).then((response)=>{
-            console.log(response.data);
-            onLoggedOut();
-        }).catch((e1)=>{
-            console.log('unable to remove user');
-        });
-    };
-}
-_s(ProfileView, "H0wmLB/EThFNhRm/b76zPYa9i+I=");
-_c = ProfileView;
-var _c;
-$RefreshReg$(_c, "ProfileView");
 
   $parcel$ReactRefreshHelpers$58c6.postlude(module);
 } finally {

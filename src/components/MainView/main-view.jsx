@@ -1,5 +1,6 @@
 import React from 'react'; // Making React available to create components. 
 import { BrowserRouter as Router, Route, Routes, Redirect, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { MovieCard } from '../movie-card/movie-card';
 import PropTypes from 'prop-types'
 import { MovieView } from '../movie-view/movie-view';
@@ -12,7 +13,7 @@ import axios from 'axios';
 import { render } from 'react-dom';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Navbar, Container, Link, Button } from 'react-bootstrap';
+import { Navbar, Container, Link, Button, Nav } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import './main-view.scss';
 
@@ -78,6 +79,7 @@ export class MainView extends React.Component {    // The following code actuall
 
     render() { //The render () function is what returns the visual state of the component. Only one root element allowed. 
         const { movies, movie, selectedMovie, user } = this.state;
+        const profile = `/users/${user}`;
 
         return (
             <div>
@@ -89,6 +91,7 @@ export class MainView extends React.Component {    // The following code actuall
                         </Navbar.Brand>
                         <Navbar.Collapse className="justify-content-end">
                             <Button onClick={() => this.onLoggedOut()} variant="dark" style={{ color: "#55fcfc" }}>Logout</Button>
+                            <Nav.Link id="Account" href={profile} style={{ color: "#55fcfc" }}>My Account</Nav.Link>
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>
@@ -148,3 +151,6 @@ export class MainView extends React.Component {    // The following code actuall
     }
 }
 
+/*<Link to={`users/${user}`}>
+                                <Button className="movieCardButton" variant="link">{user}</Button>
+                            </Link>*/
