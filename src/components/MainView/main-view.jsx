@@ -12,7 +12,7 @@ import axios from 'axios';
 import { render } from 'react-dom';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Navbar, Container, Link } from 'react-bootstrap';
+import { Navbar, Container, Link, Button } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import './main-view.scss';
 
@@ -91,13 +91,16 @@ export class MainView extends React.Component {    // The following code actuall
 
         return (
             <div>
+
                 <Navbar fixed="top" bg="dark" variant="dark" className="mainNavigation" expand="lg">
                     <Container>
                         <Navbar.Brand className="navText" href="#home">
                             <span>my</span><span class="flixColor">Flix</span><span>App</span>
                         </Navbar.Brand>
+
                     </Container>
                 </Navbar>
+
                 <Router>
 
                     <Row className="main-view justify-content-md-center" style={{ marginTop: 100, marginBottom: 100 }}>
