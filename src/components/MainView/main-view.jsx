@@ -85,17 +85,16 @@ export class MainView extends React.Component {    // The following code actuall
             <div>
 
                 <Navbar fixed="top" bg="dark" variant="dark" className="mainNavigation" expand="lg">
-                    <Container>
-                        <Navbar.Brand className="navText" href="#home">
-                            <span>my</span><span class="flixColor">Flix</span><span>App</span>
-                        </Navbar.Brand>
-                        <Navbar.Collapse className="justify-content-end">
-                            <Button onClick={() => this.onLoggedOut()} variant="dark" style={{ color: "#55fcfc" }}>Logout</Button>
-                            <Link to={`users/${user}`}>
-                                <Button className="movieCardButton" variant="link">{user}</Button>
-                            </Link>
-                        </Navbar.Collapse>
-                    </Container>
+
+                    <Navbar.Brand className="navText" href="#home">
+                        <span>my</span><span class="flixColor">Flix</span><span>App</span>
+                    </Navbar.Brand>
+                    <Navbar.Collapse className="justify-content-end">
+                        <Button onClick={() => this.onLoggedOut()} variant="dark" style={{ color: "#55fcfc" }}>Logout</Button>
+                        <Button onClick={() => this.onLoggedOut()} variant="dark" style={{ color: "#55fcfc" }}>Logout</Button>
+
+                    </Navbar.Collapse>
+
                 </Navbar>
 
                 <Router>
