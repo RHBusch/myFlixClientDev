@@ -23074,7 +23074,17 @@ class MainView extends _reactDefault.default.Component {
                                             fileName: "src/components/MainView/main-view.jsx",
                                             lineNumber: 94
                                         },
-                                        __self: this
+                                        __self: this,
+                                        children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                                            className: "movieCardButton",
+                                            variant: "link",
+                                            __source: {
+                                                fileName: "src/components/MainView/main-view.jsx",
+                                                lineNumber: 95
+                                            },
+                                            __self: this,
+                                            children: user
+                                        })
                                     })
                                 ]
                             })

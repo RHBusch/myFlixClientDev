@@ -92,7 +92,7 @@ export class MainView extends React.Component {    // The following code actuall
                         <Navbar.Collapse className="justify-content-end">
                             <Button onClick={() => this.onLoggedOut()} variant="dark" style={{ color: "#55fcfc" }}>Logout</Button>
                             <Link to={`users/${user}`}>
-
+                                <Button className="movieCardButton" variant="link">{user}</Button>
                             </Link>
                         </Navbar.Collapse>
                     </Container>
