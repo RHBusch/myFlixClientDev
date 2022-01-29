@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navbar, Container, Nav, Button } from 'react-bootstrap';
 import NavbarToggle from 'react-bootstrap/esm/NavbarToggle';
+import './navbar-view.scss';
 
 export function NavBar({ user }) {
 
@@ -45,5 +46,4 @@ export function NavBar({ user }) {
             </Container>
         </Navbar>
     )
-
 }
