@@ -66,6 +66,16 @@
 .flixColor {
   color: #ff84eb !important;
 }
+@import url("https://fonts.googleapis.com/css2?family=Fascinate&family=Limelight&display=swap");
+.main-view {
+  display: inline-block;
+}
+.navText {
+  font-family: "Fascinate" !important;
+}
+.flixColor {
+  color: #ff84eb !important;
+}
 .my-flix {
   color: #d89313;
 }

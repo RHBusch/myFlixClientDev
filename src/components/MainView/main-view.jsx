@@ -9,6 +9,7 @@ import { GenreView } from '../genre-view/genre-view';
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { ProfileView } from '../profile-view/profile-view';
+import { NavBar } from '../navbar-view/navbar-view';
 import axios from 'axios';
 import { render } from 'react-dom';
 import Row from 'react-bootstrap/Row';
@@ -83,56 +84,48 @@ export class MainView extends React.Component {    // The following code actuall
 
         return (
             <div>
-
-                <Navbar fixed="top" bg="dark" variant="dark" className="mainNavigation" expand="lg">
-
-                    <Navbar.Brand className="navText" href="#home">
-                        <span>my</span><span class="flixColor">Flix</span><span>App</span>
-                    </Navbar.Brand>
-                    <Navbar.Collapse className="justify-content-end">
-                        <Button onClick={() => this.onLoggedOut()} variant="dark" style={{ color: "#55fcfc" }}>Logout</Button>
-                        <Button onClick={() => this.onLoggedOut()} variant="dark" style={{ color: "#55fcfc" }}>Logout</Button>
-
-                    </Navbar.Collapse>
-
-                </Navbar>
-
                 <Router>
-
                     <Row className="main-view justify-content-md-center" style={{ marginTop: 100, marginBottom: 100 }}>
-
                         <Route exact path="/" render={() => {
                             if (!user) return <Col>
+                                <NavBar />
                                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                             </Col>
-                            return movies.map(m => (
-                                <Col md={3} key={m._id}>
-                                    <MovieCard movie={m} />
-                                </Col>
-                            ))
+                            if (user)
+                                return movies.map(m => (
+                                    <Col md={3} key={m._id}>
+                                        <MovieCard movie={m} />
+                                        <NavBar user={user} />
+                                    </Col>
+                                ))
                         }} />
                         <Route exact path="/register" render={() => {
                             if (user) return <Redirect to="/" />
                             return <Col>
                                 <RegistrationView />
+                                <NavBar />
                             </Col>
                         }} />
                         <Route exact path="/movies/:movieId" render={({ match, history }) => {
                             return <Col md={8}>
                                 <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()} />
+                                <NavBar user={user} />
                             </Col>
                         }} />
 
                         <Route exact path="/movies/movies/genre/:Name" render={({ match, history }) => {
                             return <Col md={8}>
                                 <GenreView Genre={movies.find(m => m.Genre.Name === match.params.Name).Genre} onBackClick={() => history.goBack()} />
+                                <NavBar user={user} />
                             </Col>
+
                         }} />
 
                         <Route exact path="/movies/movies/director/:Name" render={({ match, history }) => {
                             if (movies.length === 0) return <div className="main-view" />
                             return <Col md={8}>
                                 <DirectorView Director={movies.find(m => m.Director.Name === match.params.Name).Director} onBackClick={() => history.goBack()} />
+                                <NavBar user={user} />
                             </Col>
                         }} />
                         <Route exact path="/users/:Username" render={({ history, match }) => {
@@ -157,3 +150,22 @@ export class MainView extends React.Component {    // The following code actuall
                             </Link>*/
 
                            // <Nav.Link id="Account" href={profile} style={{ color: "#55fcfc" }}>My Account</Nav.Link>
+
+/*      <Navbar fixed="top" bg="dark" variant="dark" className="mainNavigation" expand="lg">
+
+           <Navbar.Brand className="navText" href="#home">
+               <span>my</span><span class="flixColor">Flix</span><span>App</span>
+           </Navbar.Brand>
+           <Navbar.Collapse className="justify-content-end">
+               <Button onClick={() => this.onLoggedOut()} variant="dark" style={{ color: "#55fcfc" }}>Logout</Button>
+               
+           </Navbar.Collapse>
+
+       </Navbar>*/
+
+/*
+--- Logout button isn't working
+--- ProfileView is a mess 
+ 
+ 
+*/

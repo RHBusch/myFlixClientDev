@@ -5,6 +5,8 @@ import { Navbar, Container, Nav, Form, Button, Card, Container, Row, Col } from 
 import './login-view.scss';
 import axios from 'axios';
 import { propTypes } from 'react-bootstrap/esm/Image';
+import { NavBar } from '../navbar-view/navbar-view';
+
 
 
 // setting state of username and password as empty by default
@@ -55,13 +57,7 @@ export function LoginView(props) {
     return (
 
         <div>
-            <Navbar fixed="top" bg="dark" variant="dark" className="mainNavigation" expand="lg">
-                <Container>
-                    <Navbar.Brand className="navText" href="#home">
-                        <span>my</span><span class="flixColor">Flix</span><span>App</span>
-                    </Navbar.Brand>
-                </Container>
-            </Navbar>
+
             <Container>
                 <Row>
                     <Col></Col>
@@ -94,3 +90,12 @@ export function LoginView(props) {
         </div>
     );
 }
+
+
+/*<Navbar fixed="top" bg="dark" variant="dark" className="mainNavigation" expand="lg">
+                <Container>
+                    <Navbar.Brand className="navText" href="#home">
+                        <span>my</span><span class="flixColor">Flix</span><span>App</span>
+                    </Navbar.Brand>
+                </Container>
+            </Navbar>*/
