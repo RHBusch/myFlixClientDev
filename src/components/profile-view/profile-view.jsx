@@ -7,8 +7,12 @@ import { BrowserRouter as Router, Route, Routes, Redirect, Link } from "react-ro
 import axios from 'axios';
 import { Navbar, Container, Link, Button, Nav } from 'react-bootstrap';
 
-
-
+export class ProfileView extends React.Component {
+    render() {
+        const { movie } = this.props;
+        return (<div>hi</div>)
+    }
+}
 
 /*export function ProfileView(props) {
     const [username, setUsername] = useState('');
@@ -18,12 +22,9 @@ import { Navbar, Container, Link, Button, Nav } from 'react-bootstrap';
     const [usernameErr, setUsernameErr] = useState('');
     const [passwordErr, setPasswordErr] = useState('');
     const [birthday, setBirthday] = useState('');
-
     //Creating code to update profile information handleSubmit. 
-
     const handleSubmit = (e) => {
         e.preventDefault();
-
         axios.put('https://busch-movie-api.herokuapp.com/users/Username'),{
             Username: username,
             Password: password,
@@ -38,7 +39,6 @@ import { Navbar, Container, Link, Button, Nav } from 'react-bootstrap';
                 window.open('/', '_self')
             })
             .catch(e => { console.log('error updating user details') })
-
     }
     //Creating code to delete a user - handleDelete. 
     const handleDelete = (e) => {
@@ -55,9 +55,6 @@ import { Navbar, Container, Link, Button, Nav } from 'react-bootstrap';
             });
     }
 }
-
-
-
 */
 
 

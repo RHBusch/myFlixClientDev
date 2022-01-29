@@ -8,7 +8,7 @@ import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
-import { ProfileView } from '../profile-view/profile-view';
+
 import { NavBar } from '../navbar-view/navbar-view';
 import axios from 'axios';
 import { render } from 'react-dom';
@@ -17,6 +17,7 @@ import Col from 'react-bootstrap/Col';
 import { Navbar, Container, Link, Button, Nav } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import './main-view.scss';
+import { ProfileView } from '../profile-view/profile-view';
 
 
 
@@ -130,13 +131,12 @@ export class MainView extends React.Component {    // The following code actuall
                         }} />
                         <Route exact path="/users/:Username" render={({ history, match }) => {
                             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
-                            if (movies.length === 0) return <div className="main-view" />
-                            return <div> <ProfileView history={history} movies={movies}
-                                user={user === match.params.Username} />
-                                <Link to={`users/${user}`}>
-                                    <Button className="movieCardButton" variant="link">{user + " Profile"}</Button>
-                                </Link>
-                            </div>
+                            return <Col md={8}>
+                                <ProfileView />
+                                <NavBar />
+
+
+                            </Col>
                         }} />
                     </Row>
                 </Router>
@@ -163,9 +163,19 @@ export class MainView extends React.Component {    // The following code actuall
 
        </Navbar>*/
 
+/*   if (movies.length === 0) return <div className="main-view" />
+                         return <div> <ProfileView history={history} movies={movies}
+                             user={user === match.params.Username} />
+                             <Link to={`users/${user}`}>
+                                 <Button className="movieCardButton" variant="link">{user + " Profile"}</Button>
+                             </Link>
+                         </div>*/
+
 /*
 --- Logout button isn't working
 --- ProfileView is a mess 
+---Links in navbar 
+---Styling for Logout and TestTest2 
  
  
 */

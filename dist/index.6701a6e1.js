@@ -22915,9 +22915,17 @@ parcelHelpers.export(exports, "MainView", ()=>MainView
                
            </Navbar.Collapse>
 
-       </Navbar>*/  /*
+       </Navbar>*/  /*   if (movies.length === 0) return <div className="main-view" />
+                         return <div> <ProfileView history={history} movies={movies}
+                             user={user === match.params.Username} />
+                             <Link to={`users/${user}`}>
+                                 <Button className="movieCardButton" variant="link">{user + " Profile"}</Button>
+                             </Link>
+                         </div>*/  /*
 --- Logout button isn't working
 --- ProfileView is a mess 
+---Links in navbar 
+---Styling for Logout and TestTest2 
  
  
 */ ;
@@ -22933,7 +22941,6 @@ var _directorView = require("../director-view/director-view");
 var _genreView = require("../genre-view/genre-view");
 var _loginView = require("../login-view/login-view");
 var _registrationView = require("../registration-view/registration-view");
-var _profileView = require("../profile-view/profile-view");
 var _navbarView = require("../navbar-view/navbar-view");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
@@ -22944,6 +22951,7 @@ var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
 var _reactBootstrap = require("react-bootstrap");
 var _mainViewScss = require("./main-view.scss");
+var _profileView = require("../profile-view/profile-view");
 class MainView extends _reactDefault.default.Component {
     constructor(){
         super() //Calling React.Component 
@@ -23004,13 +23012,13 @@ class MainView extends _reactDefault.default.Component {
         return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             __source: {
                 fileName: "src/components/MainView/main-view.jsx",
-                lineNumber: 86
+                lineNumber: 87
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.BrowserRouter, {
                 __source: {
                     fileName: "src/components/MainView/main-view.jsx",
-                    lineNumber: 87
+                    lineNumber: 88
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
@@ -23021,7 +23029,7 @@ class MainView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/components/MainView/main-view.jsx",
-                        lineNumber: 88
+                        lineNumber: 89
                     },
                     __self: this,
                     children: [
@@ -23053,7 +23061,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/MainView/main-view.jsx",
-                                lineNumber: 89
+                                lineNumber: 90
                             },
                             __self: this
                         }),
@@ -23075,7 +23083,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/MainView/main-view.jsx",
-                                lineNumber: 102
+                                lineNumber: 103
                             },
                             __self: this
                         }),
@@ -23099,7 +23107,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/MainView/main-view.jsx",
-                                lineNumber: 109
+                                lineNumber: 110
                             },
                             __self: this
                         }),
@@ -23123,7 +23131,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/MainView/main-view.jsx",
-                                lineNumber: 116
+                                lineNumber: 117
                             },
                             __self: this
                         }),
@@ -23150,7 +23158,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/MainView/main-view.jsx",
-                                lineNumber: 124
+                                lineNumber: 125
                             },
                             __self: this
                         }),
@@ -23161,31 +23169,19 @@ class MainView extends _reactDefault.default.Component {
                                 if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
                                     onLoggedIn: (user1)=>this.onLoggedIn(user1)
                                 }));
-                                if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                    className: "main-view"
-                                }));
-                                return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                                return(/*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                                    md: 8,
                                     children: [
-                                        " ",
                                         /*#__PURE__*/ _jsxRuntime.jsx(_profileView.ProfileView, {
-                                            history: history,
-                                            movies: movies,
-                                            user: user === match.params.Username
                                         }),
-                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Link, {
-                                            to: `users/${user}`,
-                                            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                                                className: "movieCardButton",
-                                                variant: "link",
-                                                children: user + " Profile"
-                                            })
+                                        /*#__PURE__*/ _jsxRuntime.jsx(_navbarView.NavBar, {
                                         })
                                     ]
                                 }));
                             },
                             __source: {
                                 fileName: "src/components/MainView/main-view.jsx",
-                                lineNumber: 131
+                                lineNumber: 132
                             },
                             __self: this
                         })
@@ -40831,6 +40827,58 @@ $parcel$ReactRefreshHelpers$58c6.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ProfileView", ()=>ProfileView
+) /*export function ProfileView(props) {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+    const [emailErr, setEmailErr] = useState('');
+    const [usernameErr, setUsernameErr] = useState('');
+    const [passwordErr, setPasswordErr] = useState('');
+    const [birthday, setBirthday] = useState('');
+    //Creating code to update profile information handleSubmit. 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        axios.put('https://busch-movie-api.herokuapp.com/users/Username'),{
+            Username: username,
+            Password: password,
+            Email: email,
+            Birthday: birthday,
+        }, {
+            headers: { Authorization: `Bearer ${token}` }
+        }
+            .then(reponse => {
+                console.log(response.data);
+                setUsername(response.data);
+                window.open('/', '_self')
+            })
+            .catch(e => { console.log('error updating user details') })
+    }
+    //Creating code to delete a user - handleDelete. 
+    const handleDelete = (e) => {
+        e.preventDefault();
+        axios.delete('https://busch-movie-api.herokuapp.com/users/remv/:Username'), {
+            headers: { Authorization: `Bearer ${token}` }
+        }
+            .then(response => {
+                console.log(response.data);
+                onLoggedOut()
+            })
+            .catch(e => {
+                console.log('unable to remove user')
+            });
+    }
+}
+*/  /*Begin by detailing all logic for axios requests. Use login and registration examples for setting up the 
+details for updating a user's information + a handleSubmit function. Don't worry too much about the 
+profileview button. That can come later, and likely in the NavBar. The logic will be more important for now. You will need to build a form to
+ update this information. Add a user profile view to display user information and:
+Allow a user to update their user info (username, password, email, date of birth)
+Allow a user to deregister
+Display a user's favorite movies
+Allow a user to remove a movie from their list of favorites*/ ;
+var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _card = require("react-bootstrap/Card");
@@ -40841,12 +40889,25 @@ var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
+class ProfileView extends _reactDefault.default.Component {
+    render() {
+        const { movie  } = this.props;
+        return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+            __source: {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 13
+            },
+            __self: this,
+            children: "hi"
+        }));
+    }
+}
 
   $parcel$ReactRefreshHelpers$58c6.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"6TuXu","react-bootstrap/Card":"MoOk8","react-bootstrap/Button":"9CzHT","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","axios":"iYoWk","@parcel/transformer-js/src/esmodule-helpers.js":"fp0v4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cG54J"}],"6TRz5":[function() {},{}],"jUTZ8":[function() {},{}]},["djUTW","3R0oj","dLPEP"], "dLPEP", "parcelRequirec6c8")
+},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"fp0v4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cG54J","react/jsx-runtime":"8xIwr","react-bootstrap/Card":"MoOk8","react-bootstrap/Button":"9CzHT","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","axios":"iYoWk"}],"6TRz5":[function() {},{}],"jUTZ8":[function() {},{}]},["djUTW","3R0oj","dLPEP"], "dLPEP", "parcelRequirec6c8")
 
 //# sourceMappingURL=index.6701a6e1.js.map
