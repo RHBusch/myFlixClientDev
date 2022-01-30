@@ -7,7 +7,7 @@ import { Col, Row, Container, Form, Button } from 'react-bootstrap'
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Route, Routes, Redirect, Link } from "react-router-dom";
 import axios from 'axios';
-import { Navbar, Container, Link, Button, Nav } from 'react-bootstrap';
+import { Navbar, Container, Link, Button, Nav, CardGroup } from 'react-bootstrap';
 
 export class ProfileView extends React.Component {
     constructor() {
@@ -215,7 +215,7 @@ export class ProfileView extends React.Component {
                                             type="text"
                                             name="Username"
                                             placeholder="New Username"
-                                            onChange={(e) => setUsername(e.target.value)}
+                                            onChange={(e) => this.setUsername(e.target.value)}
                                             required
                                         />
                                     </Form.Group>
@@ -269,12 +269,17 @@ export class ProfileView extends React.Component {
                             </Card.Body>
                         </Card>
                     </Col>
+                </Row>
+                <br></br>
 
+
+                <Row>
                     <Col>
-                        <Card>
+                        <Card style={{ marginTop: 100, marginBottom: 100, width: 300 }}>
                             <Card.Header style={{ textAlign: 'center' }} className="movieCardButton" >
-                                <h2>My Favorites</h2>
+                                <h2>Favorite Flix</h2>
                             </Card.Header>
+
                             <Card.Body>
                                 {FavoriteMovies.length === 0 && (
                                     <div className="text-center">No Favorite Movies</div>
@@ -286,19 +291,21 @@ export class ProfileView extends React.Component {
                                             FavoriteMovies.find((fav) => fav === movie._id)
                                         ) {
                                             return (
-                                                <Container key={movie._id}>
+
+                                                <Container key={movie._id} className="movieCardBodyStyle">
                                                     <Card>
-                                                        <Card.Img
-                                                            variant="top"
-                                                            src={movie.ImagePath}
-                                                        />
                                                         <Card.Body className="movieCardBodyStyle">
-                                                            <Card.Title>
+                                                            <Card.Title style={{ textAlign: 'center' }}>
                                                                 {movie.Title}
                                                             </Card.Title>
+                                                            <Card.Img
+                                                                variant="top"
+                                                                src={movie.ImagePath}
+                                                            />
+
                                                             <Button
-                                                                size="md"
-                                                                variant="danger"
+                                                                className="text-center"
+                                                                size="lg"
                                                                 value={movie._id}
                                                                 onClick={(e) => this.onRemoveFavorite(e, movie)}
                                                                 className="movieCardButton"
@@ -306,8 +313,10 @@ export class ProfileView extends React.Component {
                                                                 Remove
                                                             </Button>
                                                         </Card.Body>
+
                                                     </Card>
                                                 </Container>
+
                                             );
                                         }
                                     })}
@@ -316,8 +325,10 @@ export class ProfileView extends React.Component {
                     </Col>
                 </Row>
 
-            </Container>
+            </Container >
         );
     }
 }
+
+
 
