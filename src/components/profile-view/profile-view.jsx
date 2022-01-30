@@ -272,7 +272,6 @@ export class ProfileView extends React.Component {
                 </Row>
                 <br></br>
 
-
                 <Row>
                     <Col>
                         <Card style={{ marginTop: 100, marginBottom: 100, width: 300 }}>
@@ -302,16 +301,13 @@ export class ProfileView extends React.Component {
                                                                 variant="top"
                                                                 src={movie.ImagePath}
                                                             />
-
                                                             <Button
                                                                 className="text-center"
                                                                 size="lg"
                                                                 value={movie._id}
                                                                 onClick={(e) => this.onRemoveFavorite(e, movie)}
-                                                                className="movieCardButton"
-                                                            >
-                                                                Remove
-                                                            </Button>
+                                                                className="movieCardButton">
+                                                                Remove </Button>
                                                         </Card.Body>
 
                                                     </Card>

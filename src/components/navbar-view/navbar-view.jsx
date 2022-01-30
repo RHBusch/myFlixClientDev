@@ -30,16 +30,16 @@ export function NavBar({ user }) {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ml-auto">
                         {isAuth() && (
-                            <Nav.Link href={`/users/${user}`}>{user}</Nav.Link>
+                            <Nav.Link href={`/users/${user}`} className="navText">{user}</Nav.Link>
                         )}
                         {isAuth() && (
-                            <Button variant="link" onClick={() => { onLoggedOut() }}>Logout</Button>
+                            <Button variant="link" className="flixColor" onClick={() => { onLoggedOut() }}>Logout</Button>
                         )}
                         {!isAuth() && (
-                            <Nav.Link href="/">Sign-in</Nav.Link>
+                            <Nav.Link href="/" className="navText">Sign-in</Nav.Link>
                         )}
                         {!isAuth() && (
-                            <Nav.Link href="/register">Sign-up</Nav.Link>
+                            <Nav.Link href="/register" className="navText">Sign-up</Nav.Link>
                         )}
                     </Nav>
                 </Navbar.Collapse>
