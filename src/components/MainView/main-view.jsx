@@ -48,6 +48,11 @@ export class MainView extends React.Component {    // The following code actuall
         });
     }
 
+    setUser(user) {
+        this.setState({ user });
+        localStorage.setItem('user', JSON.stringify(user));
+    }
+
     onLoggedIn(authData) {
         console.log(authData);
         this.setState({
@@ -132,10 +137,14 @@ export class MainView extends React.Component {    // The following code actuall
                         <Route exact path="/users/:Username" render={({ history, match }) => {
                             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                             return <Col md={8}>
-                                <ProfileView />
+                                <ProfileView
+                                    user={user}
+                                    setUser={(user) => this.setUser(user)}
+                                    movies={movies}
+                                    onLoggedOut={() => this.onLoggedOut()}
+                                    onBackClick={() => history.goBack()}
+                                />
                                 <NavBar />
-
-
                             </Col>
                         }} />
                     </Row>
@@ -144,6 +153,8 @@ export class MainView extends React.Component {    // The following code actuall
         );
     }
 }
+
+
 
 /*<Link to={`users/${user}`}>
                                 <Button className="movieCardButton" variant="link">{user}</Button>
@@ -170,7 +181,41 @@ export class MainView extends React.Component {    // The following code actuall
                                  <Button className="movieCardButton" variant="link">{user + " Profile"}</Button>
                              </Link>
                          </div>*/
+/*
 
+
+  getUser() {
+        const username = localStorage.getItem('user');
+        const token = localStorage.getItem('token');
+        axios.get(`https://busch-movie-api.herokuapp.com/users/${username}`, {
+            headers: { Authorization: `Bearer ${token}` },
+        })
+            .then((response) => {
+                this.setState({
+                    name: response.data.Name,
+                    username: response.data.Username,
+                    password: response.data.Password,
+                    email: response.data.Email,
+                    birthday: response.data.Birthday,
+                    favoritemovies: response.data.FavoriteMovies
+                });
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
+
+
+                         username={user}
+                         password={password}
+                         email={email}
+                         name={name}
+                         birthday={birthday}
+                         favoritemovies={FavoriteMovies}
+                         movies={movies}
+                         getUser={this.getUser}
+*.
 /*
 --- Logout button isn't working
 --- ProfileView is a mess 
