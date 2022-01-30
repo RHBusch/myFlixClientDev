@@ -270,7 +270,6 @@ export class ProfileView extends React.Component {
                         </Card>
                     </Col>
                 </Row>
-                <br></br>
 
                 <Row>
                     <Col>
@@ -287,7 +286,7 @@ export class ProfileView extends React.Component {
                                     movies.map((movie) => {
                                         if (
                                             movie._id ===
-                                            FavoriteMovies.find((fav) => fav === movie._id)
+                                            FavoriteMovies.find((favoriteMovie) => favoriteMovie === movie._id)
                                         ) {
                                             return (
 
@@ -309,20 +308,16 @@ export class ProfileView extends React.Component {
                                                                 className="movieCardButton">
                                                                 Remove </Button>
                                                         </Card.Body>
-
                                                     </Card>
-                                                </Container>
-
-                                            );
+                                                </Container>)
                                         }
                                     })}
                             </Card.Body>
                         </Card>
                     </Col>
                 </Row>
-
             </Container >
-        );
+        )
     }
 }
 
