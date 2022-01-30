@@ -10,6 +10,7 @@ import axios from 'axios';
 import { Navbar, Container, Link, Button, Nav, CardGroup } from 'react-bootstrap';
 
 export class ProfileView extends React.Component {
+    //Setting initial states for DB information. 
     constructor() {
         super();
         this.state = {
@@ -25,14 +26,14 @@ export class ProfileView extends React.Component {
         const accessToken = localStorage.getItem('token');
         this.getUser(accessToken);
     }
-
+    //Establishing an onRemoveFavorite function to remove a movie from a user's list. 
     onRemoveFavorite = (e, movie) => {
         const Username = localStorage.getItem('user');
         console.log(Username);
         const token = localStorage.getItem('token');
         axios
             .delete(
-                `https://busch-movie-api.herokuapp.com/users/${Username}/remvmovies/${movie._id}`,
+                `https://busch-movie-api.herokuapp.com/users/${Username}/remvmovies/${movie._id}`, // Axios endpoint
                 { headers: { Authorization: `Bearer ${token}` } }
             )
             .then((response) => {
@@ -44,7 +45,7 @@ export class ProfileView extends React.Component {
                 console.log(error.response.data);
             });
     };
-
+    //Establishing an onLoggedOut function to remove user information and auhorization. 
     onLoggedOut() {
         localStorage.removeItem('token');
         localStorage.removeItem('user');
@@ -53,7 +54,7 @@ export class ProfileView extends React.Component {
         });
         window.open('/', '_self');
     }
-
+    //"Get" request to read user information from DB. 
     getUser = (token) => {
         const Username = localStorage.getItem('user');
         axios
@@ -73,8 +74,8 @@ export class ProfileView extends React.Component {
                 console.log(error.response.data);
             });
     };
-
-    editUser = (e) => {
+    // Axios "put" request to update user information. 
+    updateUser = (e) => {
         e.preventDefault();
         const Username = localStorage.getItem('user');
         const token = localStorage.getItem('token');
@@ -111,7 +112,7 @@ export class ProfileView extends React.Component {
             });
     };
 
-    // Deregister
+    // Axios delete request to delete a user. 
     onDeleteUser() {
         const Username = localStorage.getItem('user');
         const token = localStorage.getItem('token');
@@ -132,7 +133,7 @@ export class ProfileView extends React.Component {
             });
     }
 
-    // Set user values
+    // Establishing user values for state. 
     setUsername(value) {
         this.setState({
             Username: value,
@@ -200,7 +201,7 @@ export class ProfileView extends React.Component {
                             <Card.Body className="movieCardBodyStyle">
                                 <Form
                                     onSubmit={(e) =>
-                                        this.editUser(
+                                        this.updateUser(
                                             e,
                                             this.Username,
                                             this.Password,
@@ -251,7 +252,7 @@ export class ProfileView extends React.Component {
                                         <Button
                                             variant="primary"
                                             type="submit"
-                                            onClick={() => this.editUser}
+                                            onClick={() => this.updateUser}
                                             className="movieCardButton"
                                         >
                                             Update User
