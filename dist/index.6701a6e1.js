@@ -26342,7 +26342,7 @@ class MovieCard extends _reactDefault.default.Component {
                                 lineNumber: 21
                             },
                             __self: this,
-                            children: movie.Director.Name
+                            children: movie.Title
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Text, {
                             __source: {
