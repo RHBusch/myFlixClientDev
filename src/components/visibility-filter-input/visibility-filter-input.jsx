@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Form from 'react-bootstrap' //Add /Form?
+import Form from 'react-bootstrap/Form' //Add /Form?
 
 import { setFilter } from '../../actions/actions';
 

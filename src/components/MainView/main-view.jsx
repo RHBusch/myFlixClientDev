@@ -99,19 +99,27 @@ class MainView extends React.Component {    // The following code actually creat
             <div>
                 <Router>
                     <Row className="main-view justify-content-md-center" style={{ marginTop: 100, marginBottom: 100 }}>
+
                         <Route exact path="/" render={() => {
-                            if (!user) return <Col>
+                            console.log('login')
+                            if (!user)
+                                return (
+                                    <Col>
+                                        <LoginView
+                                            onLoggedIn={(user) => this.onLoggedIn(user)}
+                                        />
+                                        <NavBar />
+                                    </Col>
+                                );
+                            if (movies.length === 0) return <div className="main-view" />;
+                            console.log(this.state);
+                            return <Col>
+                                <MoviesList movies={movies} />;
                                 <NavBar />
-                                <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                             </Col>
-                            if (user)
-                                return
-                            <Col>
-                                <div className='main-view' />
-                                <MoviesList movies={movies} />
-                                <NavBar user={user} />
-                            </Col>
+
                         }} />
+
                         <Route exact path="/register" render={() => {
                             if (user) return <Redirect to="/" />
                             return <Col>
@@ -121,7 +129,7 @@ class MainView extends React.Component {    // The following code actually creat
                         }} />
                         <Route exact path="/movies/:movieId" render={({ match, history }) => {
                             return <Col md={8}>
-                                <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()} />
+                                <MovieView movies={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()} />
                                 <NavBar user={user} />
                             </Col>
                         }} />
@@ -158,14 +166,17 @@ class MainView extends React.Component {    // The following code actually creat
                 </Router>
             </div>
         );
+
     }
 }
+
 
 let mapStateToProps = state => {
     return { movies: state.movies }
 }
 
 export default connect(mapStateToProps, { setMovies })(MainView);
+
 
 /*<Link to={`users/${user}`}>
                                 <Button className="movieCardButton" variant="link">{user}</Button>

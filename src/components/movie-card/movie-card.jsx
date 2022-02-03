@@ -10,17 +10,17 @@ import { Link } from "react-router-dom";
 
 export class MovieCard extends React.Component {
     render() {
-        const { movie } = this.props;
+        const { movies } = this.props;
 
 
 
         return (
             <Card>
-                <Card.Img variant="top" src={movie.ImagePath} />
+                <Card.Img variant="top" src={movies.ImagePath} />
                 <Card.Body className="movieCardBodyStyle">
-                    <Card.Title>{movie.Title}</Card.Title>
-                    <Card.Text>{movie.Description}</Card.Text>
-                    <Link to={`/movies/${movie._id}`}>
+                    <Card.Title>{movies.Title}</Card.Title>
+                    <Card.Text>{movies.Description}</Card.Text>
+                    <Link to={`/movies/${movies._id}`}>
                         <Button className="movieCardButton" variant="link">Open</Button>
                     </Link>
                 </Card.Body>
@@ -30,7 +30,7 @@ export class MovieCard extends React.Component {
 };
 
 MovieCard.propTypes = {
-    movie: PropTypes.shape({ //props object must include a movie object
+    movies: PropTypes.shape({ //props object must include a movie object
         Title: PropTypes.string.isRequired, //movie object may contain a title --- if so, must be a string.
         Description: PropTypes.string.isRequired,
         ImagePath: PropTypes.string.isRequired,

@@ -11,14 +11,14 @@ import MainView from './components/MainView/main-view'; //Importing MainView ---
 import './index.scss';
 
 //Establishing store with inputes from the combined reducers 'moviesApp.'
-const store = createStore(moviesApp, devToolsEnhancer());
+const myFlixStore = createStore(moviesApp, devToolsEnhancer());
 
 // Main component of the initial test --- change the text to confirm responsiveness
 class MyFlixApplication extends React.Component {
     render() {
         return (
             //provider makes the store accessible to the entire app
-            <Provider store={store}>
+            <Provider store={myFlixStore}>
                 <Container>
                     <MainView />
                 </Container>

@@ -957,13 +957,13 @@ var _mainViewDefault = parcelHelpers.interopDefault(_mainView);
 // Import statement to indicate that my app will bundle `./index.scss`
 var _indexScss = require("./index.scss");
 //Establishing store with inputes from the combined reducers 'moviesApp.'
-const store = _redux.createStore(_reducersDefault.default, _reduxDevtoolsExtension.devToolsEnhancer());
+const myFlixStore = _redux.createStore(_reducersDefault.default, _reduxDevtoolsExtension.devToolsEnhancer());
 // Main component of the initial test --- change the text to confirm responsiveness
 class MyFlixApplication extends _reactDefault.default.Component {
     render() {
         return(//provider makes the store accessible to the entire app
         /*#__PURE__*/ _jsxRuntime.jsx(_reactRedux.Provider, {
-            store: store,
+            store: myFlixStore,
             __source: {
                 fileName: "src/index.jsx",
                 lineNumber: 21
@@ -25713,6 +25713,7 @@ function visibilityFilter(state = '', action) {
 function movies(state = [], action) {
     switch(action.type){
         case _actions.SET_MOVIES:
+            console.log('SET_MOVIES reducer reached');
             return action.value;
         default:
             return state;
@@ -25733,27 +25734,25 @@ parcelHelpers.export(exports, "SET_MOVIES", ()=>SET_MOVIES
 parcelHelpers.export(exports, "SET_FILTER", ()=>SET_FILTER
 );
 //Action creators 
-parcelHelpers.export(exports, "Setmovies", ()=>Setmovies
+parcelHelpers.export(exports, "setMovies", ()=>setMovies
 );
 parcelHelpers.export(exports, "setFilter", ()=>setFilter
 );
 const SET_MOVIES = 'SET_MOVIES';
 const SET_FILTER = 'SET_Filter';
-function Setmovies(value) {
+function setMovies(value) {
+    console.log('SET_MOVIES action triggered');
     return {
         type: SET_MOVIES,
         value
     };
 }
-_c = Setmovies;
 function setFilter(value) {
     return {
         type: SET_FILTER,
         value
     };
 }
-var _c;
-$RefreshReg$(_c, "Setmovies");
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"fp0v4"}],"4zHYU":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$beb1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
@@ -25883,33 +25882,34 @@ class MainView extends _reactDefault.default.Component {
                             exact: true,
                             path: "/",
                             render: ()=>{
+                                console.log('login');
                                 if (!user) return(/*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
                                     children: [
-                                        /*#__PURE__*/ _jsxRuntime.jsx(_navbarView.NavBar, {
-                                        }),
                                         /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
                                             onLoggedIn: (user1)=>this.onLoggedIn(user1)
+                                        }),
+                                        /*#__PURE__*/ _jsxRuntime.jsx(_navbarView.NavBar, {
                                         })
                                     ]
                                 }));
-                                if (user) return;
-                                /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                                if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                    className: "main-view"
+                                }));
+                                console.log(this.state);
+                                return(/*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
                                     children: [
-                                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                            className: "main-view"
-                                        }),
                                         /*#__PURE__*/ _jsxRuntime.jsx(_moviesListDefault.default, {
                                             movies: movies
                                         }),
+                                        ";",
                                         /*#__PURE__*/ _jsxRuntime.jsx(_navbarView.NavBar, {
-                                            user: user
                                         })
                                     ]
-                                });
+                                }));
                             },
                             __source: {
                                 fileName: "src/components/MainView/main-view.jsx",
-                                lineNumber: 102
+                                lineNumber: 103
                             },
                             __self: this
                         }),
@@ -25931,7 +25931,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/MainView/main-view.jsx",
-                                lineNumber: 115
+                                lineNumber: 123
                             },
                             __self: this
                         }),
@@ -25943,7 +25943,7 @@ class MainView extends _reactDefault.default.Component {
                                     md: 8,
                                     children: [
                                         /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
-                                            movie: movies.find((m)=>m._id === match.params.movieId
+                                            movies: movies.find((m)=>m._id === match.params.movieId
                                             ),
                                             onBackClick: ()=>history.goBack()
                                         }),
@@ -25955,7 +25955,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/MainView/main-view.jsx",
-                                lineNumber: 122
+                                lineNumber: 130
                             },
                             __self: this
                         }),
@@ -25979,7 +25979,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/MainView/main-view.jsx",
-                                lineNumber: 129
+                                lineNumber: 137
                             },
                             __self: this
                         }),
@@ -26006,7 +26006,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/MainView/main-view.jsx",
-                                lineNumber: 137
+                                lineNumber: 145
                             },
                             __self: this
                         }),
@@ -26036,7 +26036,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/MainView/main-view.jsx",
-                                lineNumber: 144
+                                lineNumber: 152
                             },
                             __self: this
                         })
@@ -41982,7 +41982,7 @@ var _movieCardScss = require("./movie-card.scss");
 var _reactRouterDom = require("react-router-dom");
 class MovieCard extends _reactDefault.default.Component {
     render() {
-        const { movie  } = this.props;
+        const { movies  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default, {
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
@@ -41992,7 +41992,7 @@ class MovieCard extends _reactDefault.default.Component {
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Img, {
                     variant: "top",
-                    src: movie.ImagePath,
+                    src: movies.ImagePath,
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
                         lineNumber: 19
@@ -42013,7 +42013,7 @@ class MovieCard extends _reactDefault.default.Component {
                                 lineNumber: 21
                             },
                             __self: this,
-                            children: movie.Title
+                            children: movies.Title
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Text, {
                             __source: {
@@ -42021,10 +42021,10 @@ class MovieCard extends _reactDefault.default.Component {
                                 lineNumber: 22
                             },
                             __self: this,
-                            children: movie.Description
+                            children: movies.Description
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                            to: `/movies/${movie._id}`,
+                            to: `/movies/${movies._id}`,
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
                                 lineNumber: 23
@@ -42048,7 +42048,7 @@ class MovieCard extends _reactDefault.default.Component {
     }
 }
 MovieCard.propTypes = {
-    movie: _propTypesDefault.default.shape({
+    movies: _propTypesDefault.default.shape({
         Title: _propTypesDefault.default.string.isRequired,
         Description: _propTypesDefault.default.string.isRequired,
         ImagePath: _propTypesDefault.default.string.isRequired,
@@ -43675,10 +43675,10 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("React");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactBootstrap = require("react-bootstrap"); // add /Col here? 
-var _reactBootstrapDefault = parcelHelpers.interopDefault(_reactBootstrap);
+var _col = require("react-bootstrap/Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
 var _reactRedux = require("react-redux");
-var _movieCard = require("../movie-card/movie-card"); //Confirm path
+var _movieCard = require("../movie-card/movie-card");
 var _visibilityFilterInput = require("../visibility-filter-input/visibility-filter-input");
 var _visibilityFilterInputDefault = parcelHelpers.interopDefault(_visibilityFilterInput);
 const mapStateToProps = (state)=>{
@@ -43702,7 +43702,7 @@ function MoviesList(props) {
     }));
     return(/*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
         children: [
-            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrapDefault.default, {
+            /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                 md: 12,
                 style: {
                     margin: '1em'
@@ -43721,18 +43721,18 @@ function MoviesList(props) {
                     __self: this
                 })
             }),
-            filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrapDefault.default, {
+            filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                     md: 3,
                     __source: {
                         fileName: "src/components/movies-list/movies-list.jsx",
-                        lineNumber: 29
+                        lineNumber: 30
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                        movie: m,
+                        movies: m,
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 30
+                            lineNumber: 31
                         },
                         __self: this
                     })
@@ -43751,7 +43751,7 @@ $RefreshReg$(_c, "MoviesList");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","React":"6TuXu","react-bootstrap":"h2YVd","react-redux":"2L0if","../movie-card/movie-card":"6EiBJ","../visibility-filter-input/visibility-filter-input":"7ZxGS","@parcel/transformer-js/src/esmodule-helpers.js":"fp0v4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cG54J"}],"7ZxGS":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","React":"6TuXu","react-redux":"2L0if","../movie-card/movie-card":"6EiBJ","../visibility-filter-input/visibility-filter-input":"7ZxGS","@parcel/transformer-js/src/esmodule-helpers.js":"fp0v4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cG54J","react-bootstrap/Col":"fbam0"}],"7ZxGS":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$9bc3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -43764,11 +43764,11 @@ var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRedux = require("react-redux");
-var _reactBootstrap = require("react-bootstrap"); //Add /Form?
-var _reactBootstrapDefault = parcelHelpers.interopDefault(_reactBootstrap);
+var _form = require("react-bootstrap/Form"); //Add /Form?
+var _formDefault = parcelHelpers.interopDefault(_form);
 var _actions = require("../../actions/actions");
 function visibilityFilterInput(props) {
-    return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrapDefault.default.Control, {
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
         onChange: (e)=>props.setFilter(e.target.value)
         ,
         value: props.visibilityFilter,
@@ -43789,6 +43789,6 @@ exports.default = _reactRedux.connect(null, {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-redux":"2L0if","react-bootstrap":"h2YVd","../../actions/actions":"1Ttfj","@parcel/transformer-js/src/esmodule-helpers.js":"fp0v4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cG54J"}],"jUTZ8":[function() {},{}]},["djUTW","3R0oj","dLPEP"], "dLPEP", "parcelRequirec6c8")
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-redux":"2L0if","../../actions/actions":"1Ttfj","@parcel/transformer-js/src/esmodule-helpers.js":"fp0v4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cG54J","react-bootstrap/Form":"5ykgY"}],"jUTZ8":[function() {},{}]},["djUTW","3R0oj","dLPEP"], "dLPEP", "parcelRequirec6c8")
 
 //# sourceMappingURL=index.6701a6e1.js.map

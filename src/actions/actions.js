@@ -4,7 +4,8 @@ export const SET_FILTER = 'SET_Filter';
 
 
 //Action creators 
-export function Setmovies(value) {
+export function setMovies(value) {
+    console.log('SET_MOVIES action triggered')
     return { type: SET_MOVIES, value };
 }
 
