@@ -1,7 +1,8 @@
 import React from 'react'; // Making React available to create components. 
+import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Routes, Redirect, Link } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { MovieCard } from '../movie-card/movie-card';
+//import { MovieCard } from '../movie-card/movie-card';
 import PropTypes from 'prop-types'
 import { MovieView } from '../movie-view/movie-view';
 import { DirectorView } from '../director-view/director-view';
@@ -19,14 +20,17 @@ import { useHistory } from 'react-router-dom';
 import './main-view.scss';
 import { ProfileView } from '../profile-view/profile-view';
 
+import { setMovies } from '../../actions/actions';
+
+import MoviesList from '../movies-list/movies-list';
 
 
 //Exposing MainView componenet for other future components. 
-export class MainView extends React.Component {    // The following code actually creates the MainView component. 
+class MainView extends React.Component {    // The following code actually creates the MainView component. 
     constructor() { // Constructor code is executed before render code - setting up the framework for the render. 
         super() //Calling React.Component 
         this.state = {
-            movies: [],
+            //movies: [],
             selectedMovie: null,
             user: null,
             register: 'false'
@@ -75,9 +79,9 @@ export class MainView extends React.Component {    // The following code actuall
             headers: { Authorization: `Bearer ${token}` }
         })
             .then(response => {
-                this.setState({
-                    movies: response.data
-                });
+                this.props.setMovies(response.data);
+                /* this.setState({
+                     movies: response.data*/
             })
             .catch(function (error) {
                 console.log(error);
@@ -85,8 +89,11 @@ export class MainView extends React.Component {    // The following code actuall
     }
 
     render() { //The render () function is what returns the visual state of the component. Only one root element allowed. 
-        const { movies, movie, selectedMovie, user } = this.state;
-        const profile = `/users/${user}`;
+        /*const { movies, movie, selectedMovie, user } = this.state;
+        const profile = `/users/${user}`;*/
+
+        let { movies } = this.props;
+        let { user } = this.state;
 
         return (
             <div>
@@ -98,12 +105,12 @@ export class MainView extends React.Component {    // The following code actuall
                                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                             </Col>
                             if (user)
-                                return movies.map(m => (
-                                    <Col md={3} key={m._id}>
-                                        <MovieCard movie={m} />
-                                        <NavBar user={user} />
-                                    </Col>
-                                ))
+                                return
+                            <Col>
+                                <div className='main-view' />
+                                <MoviesList movies={movies} />
+                                <NavBar user={user} />
+                            </Col>
                         }} />
                         <Route exact path="/register" render={() => {
                             if (user) return <Redirect to="/" />
@@ -154,7 +161,11 @@ export class MainView extends React.Component {    // The following code actuall
     }
 }
 
+let mapStateToProps = state => {
+    return { movies: state.movies }
+}
 
+export default connect(mapStateToProps, { setMovies })(MainView);
 
 /*<Link to={`users/${user}`}>
                                 <Button className="movieCardButton" variant="link">{user}</Button>

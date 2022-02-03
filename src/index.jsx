@@ -5,7 +5,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { devToolsEnhancer } from 'redux-devtools-extension';
 import moviesApp from './reducers/reducers'//importing reducer
-import { MainView } from './components/MainView/main-view'; //Importing MainView --- this is where index.html will pull code from as well.
+import MainView from './components/MainView/main-view'; //Importing MainView --- this is where index.html will pull code from as well.
 
 // Import statement to indicate that my app will bundle `./index.scss`
 import './index.scss';
