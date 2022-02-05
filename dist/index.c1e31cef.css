@@ -7,14 +7,22 @@
   color: black !important;
   background: #ff84eb !important;
 }
-@import url("https://fonts.googleapis.com/css2?family=Fascinate&family=Lato&family=Limelight&display=swap");
-.movieCardBodyStyle {
-  font-family: "Lato" !important;
-  background: #55fcfc !important;
+@import url("https://fonts.googleapis.com/css2?family=Fascinate&family=Limelight&display=swap");
+.navText {
+  font-family: "Fascinate" !important;
 }
-.movieCardButton {
-  color: black !important;
+.loginButton {
+  width: 100% !important;
+  display: block !important;
   background: #ff84eb !important;
+  color: black !important;
+}
+.flixColor {
+  color: #ff84eb !important;
+}
+.logCardBodyStyle {
+  font-family: "Leto" !important;
+  background: #55fcfc !important;
 }
 @import url("https://fonts.googleapis.com/css2?family=Fascinate&family=Limelight&display=swap");
 .registrationButton {
@@ -40,41 +48,33 @@
   color: #ff84eb !important;
 }
 @import url("https://fonts.googleapis.com/css2?family=Fascinate&family=Limelight&display=swap");
+.main-view {
+  display: inline-block;
+}
 .navText {
   font-family: "Fascinate" !important;
-}
-.loginButton {
-  width: 100% !important;
-  display: block !important;
-  background: #ff84eb !important;
-  color: black !important;
 }
 .flixColor {
   color: #ff84eb !important;
 }
-.logCardBodyStyle {
-  font-family: "Leto" !important;
+@import url("https://fonts.googleapis.com/css2?family=Fascinate&family=Limelight&display=swap");
+.main-view {
+  display: inline-block;
+}
+.navText {
+  font-family: "Fascinate" !important;
+}
+.flixColor {
+  color: #ff84eb !important;
+}
+@import url("https://fonts.googleapis.com/css2?family=Fascinate&family=Lato&family=Limelight&display=swap");
+.movieCardBodyStyle {
+  font-family: "Lato" !important;
   background: #55fcfc !important;
 }
-@import url("https://fonts.googleapis.com/css2?family=Fascinate&family=Limelight&display=swap");
-.main-view {
-  display: inline-block;
-}
-.navText {
-  font-family: "Fascinate" !important;
-}
-.flixColor {
-  color: #ff84eb !important;
-}
-@import url("https://fonts.googleapis.com/css2?family=Fascinate&family=Limelight&display=swap");
-.main-view {
-  display: inline-block;
-}
-.navText {
-  font-family: "Fascinate" !important;
-}
-.flixColor {
-  color: #ff84eb !important;
+.movieCardButton {
+  color: black !important;
+  background: #ff84eb !important;
 }
 .my-flix {
   color: #d89313;

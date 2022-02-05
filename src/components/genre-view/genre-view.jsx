@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import { Container, Card, Button, Row, Col } from "react-bootstrap";
-import { render } from 'react-dom';
-
 
 export class GenreView extends React.Component {
     render() {
@@ -29,6 +27,7 @@ export class GenreView extends React.Component {
     }
 }
 
+//Confirming data validity. 
 GenreView.proptypes = {
     Genre: PropTypes.shape({
         Name: PropTypes.string.isRequired,

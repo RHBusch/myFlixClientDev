@@ -1,9 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from 'react-bootstrap/Button'
-import Card from 'react-bootstrap/Card'
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Button, Card } from 'react-bootstrap'
 import './movie-card.scss'
 import { Link } from "react-router-dom";
 
@@ -29,6 +26,8 @@ export class MovieCard extends React.Component {
     }
 };
 
+//Validating data inputs. 
+
 MovieCard.propTypes = {
     movies: PropTypes.shape({ //props object must include a movie object
         Title: PropTypes.string.isRequired, //movie object may contain a title --- if so, must be a string.
@@ -37,10 +36,6 @@ MovieCard.propTypes = {
         Genre: PropTypes.shape({
             Name: PropTypes.string.isRequired,
             Description: PropTypes.string.isRequired,
-        }),
-        Ratings: PropTypes.shape({
-            IMDB: PropTypes.number.isRequired,
-            RottenTomatoes: PropTypes.number.isRequired,
         }),
         Director: PropTypes.shape({
             Name: PropTypes.string.isRequired,

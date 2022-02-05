@@ -1,13 +1,9 @@
-//Change movieview back to movie..
 import React from 'react';
-import './movie-view'
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
-import { Col, Row, Container, } from 'react-bootstrap'
+import { Button, Card, Col, Row, Container } from 'react-bootstrap'
 import { Link } from "react-router-dom";
 import './movie-view.scss'
 import axios from 'axios';
-import moviesApp from '../../reducers/reducers';
+
 
 
 export class MovieView extends React.Component {

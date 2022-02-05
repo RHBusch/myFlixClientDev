@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import { Container, Card, Button, Row, Col } from "react-bootstrap";
-import { MovieCard } from '../movie-card/movie-card';
 
 
 export class DirectorView extends React.Component {
@@ -30,6 +29,8 @@ export class DirectorView extends React.Component {
         )
     }
 }
+
+//Confirming validity of data. 
 
 DirectorView.proptypes = {
     Director: PropTypes.shape({

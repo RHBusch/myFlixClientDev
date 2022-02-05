@@ -1,29 +1,29 @@
-import React from 'react'; // Making React available to create components. 
+//Importing Essentials React/Redux/Axios
+
+import React from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route, Routes, Redirect, Link } from "react-router-dom";
-import { Link } from "react-router-dom";
-import PropTypes from 'prop-types'
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import axios from 'axios';
+
+//Importing Views/Lists
 import { MovieView } from '../movie-view/movie-view';
 import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
-
 import { NavBar } from '../navbar-view/navbar-view';
-import axios from 'axios';
-import { render } from 'react-dom';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import { Navbar, Container, Link, Button, Nav } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
-import './main-view.scss';
 import { ProfileView } from '../profile-view/profile-view';
+import MoviesList from '../movies-list/movies-list';
+
+
+//Importing Actions
 
 import { setMovies } from '../../actions/actions';
 import { setUser } from '../../actions/actions';
 
-import MoviesList from '../movies-list/movies-list';
-
+//Importing Styling
+import './main-view.scss';
+import { Col, Row } from 'react-bootstrap';
 
 //Exposing MainView componenet for other future components. 
 class MainView extends React.Component {    // The following code actually creates the MainView component. 
@@ -55,8 +55,6 @@ class MainView extends React.Component {    // The following code actually creat
         this.setState({ user });
         localStorage.setItem('user', JSON.stringify(user));
     }
-
-
 
     onLoggedIn(authData) {
         console.log(authData);
