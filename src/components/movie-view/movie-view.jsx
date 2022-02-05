@@ -66,7 +66,7 @@ export class MovieView extends React.Component {
                                 </Link>
                                 <br></br>
                                 <br></br>
-                                <Button className="movieViewButton" onClick={(e) => this.addFavFlix(e, movie)}>
+                                <Button className="movieViewButton" onClick={(e) => this.addFavFlix(e, movies)}>
                                     Add Fav
                                 </Button>
 

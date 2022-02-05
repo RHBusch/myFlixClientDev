@@ -80,17 +80,14 @@ class MainView extends React.Component {    // The following code actually creat
         })
             .then(response => {
                 this.props.setMovies(response.data);
-                /* this.setState({
-                     movies: response.data*/
+
             })
             .catch(function (error) {
                 console.log(error);
             })
     }
 
-    render() { //The render () function is what returns the visual state of the component. Only one root element allowed. 
-        /*const { movies, movie, selectedMovie, user } = this.state;
-        const profile = `/users/${user}`;*/
+    render() {
 
         let { movies } = this.props;
         let { user } = this.state;
@@ -115,7 +112,7 @@ class MainView extends React.Component {    // The following code actually creat
                             console.log(this.state);
                             return <Col>
                                 <MoviesList movies={movies} />;
-                                <NavBar />
+                                <NavBar user={user} />
                             </Col>
 
                         }} />
@@ -124,7 +121,7 @@ class MainView extends React.Component {    // The following code actually creat
                             if (user) return <Redirect to="/" />
                             return <Col>
                                 <RegistrationView />
-                                <NavBar />
+                                <NavBar user={user} />
                             </Col>
                         }} />
                         <Route exact path="/movies/:movieId" render={({ match, history }) => {
@@ -172,77 +169,7 @@ class MainView extends React.Component {    // The following code actually creat
 
 
 let mapStateToProps = state => {
-    return { movies: state.movies }
+    return { movies: state.movies, user: state.user }
 }
 
 export default connect(mapStateToProps, { setMovies })(MainView);
-
-
-/*<Link to={`users/${user}`}>
-                                <Button className="movieCardButton" variant="link">{user}</Button>
-                            </Link>*/
-
-                           // <Nav.Link id="Account" href={profile} style={{ color: "#55fcfc" }}>My Account</Nav.Link>
-
-/*      <Navbar fixed="top" bg="dark" variant="dark" className="mainNavigation" expand="lg">
-
-           <Navbar.Brand className="navText" href="#home">
-               <span>my</span><span class="flixColor">Flix</span><span>App</span>
-           </Navbar.Brand>
-           <Navbar.Collapse className="justify-content-end">
-               <Button onClick={() => this.onLoggedOut()} variant="dark" style={{ color: "#55fcfc" }}>Logout</Button>
-               
-           </Navbar.Collapse>
-
-       </Navbar>*/
-
-/*   if (movies.length === 0) return <div className="main-view" />
-                         return <div> <ProfileView history={history} movies={movies}
-                             user={user === match.params.Username} />
-                             <Link to={`users/${user}`}>
-                                 <Button className="movieCardButton" variant="link">{user + " Profile"}</Button>
-                             </Link>
-                         </div>*/
-/*
-
-
-  getUser() {
-        const username = localStorage.getItem('user');
-        const token = localStorage.getItem('token');
-        axios.get(`https://busch-movie-api.herokuapp.com/users/${username}`, {
-            headers: { Authorization: `Bearer ${token}` },
-        })
-            .then((response) => {
-                this.setState({
-                    name: response.data.Name,
-                    username: response.data.Username,
-                    password: response.data.Password,
-                    email: response.data.Email,
-                    birthday: response.data.Birthday,
-                    favoritemovies: response.data.FavoriteMovies
-                });
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-    }
-
-
-
-                         username={user}
-                         password={password}
-                         email={email}
-                         name={name}
-                         birthday={birthday}
-                         favoritemovies={FavoriteMovies}
-                         movies={movies}
-                         getUser={this.getUser}
-*.
-/*
---- Logout button isn't working
---- ProfileView is a mess 
----Links in navbar 
----Styling for Logout and TestTest2 
- 
- 
-*/

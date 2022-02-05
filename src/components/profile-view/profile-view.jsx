@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Route, Routes, Redirect, Link } from "react-router-dom";
 import axios from 'axios';
 import { Navbar, Container, Link, Button, Nav, CardGroup } from 'react-bootstrap';
+import { setUser, updateUser } from "../../actions/actions";
+import { connect } from "react-redux";
 
 export class ProfileView extends React.Component {
     //Setting initial states for DB information. 
@@ -322,5 +324,12 @@ export class ProfileView extends React.Component {
     }
 }
 
+let mapStateToProps = (state) => {
+    console.log(state);
+    return {
+        user: state.user,
+        movies: state.movies
+    };
+};
 
-
+export default connect(mapStateToProps, { setUser, updateUser })(ProfileView);
