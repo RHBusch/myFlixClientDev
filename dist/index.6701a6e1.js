@@ -25801,7 +25801,6 @@ var _react = require("react"); // Making React available to create components.
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRedux = require("react-redux");
 var _reactRouterDom = require("react-router-dom");
-//import { MovieCard } from '../movie-card/movie-card';
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _movieView = require("../movie-view/movie-view");
@@ -25829,7 +25828,6 @@ class MainView extends _reactDefault.default.Component {
         super() //Calling React.Component 
         ;
         this.state = {
-            //movies: [],
             selectedMovie: null,
             user: null,
             register: 'false'
@@ -25849,10 +25847,11 @@ class MainView extends _reactDefault.default.Component {
             selectedMovie: movie
         });
     }
-    setUser(user) {
-        this.setState({
-            user
-        });
+    /*setUser(user) {
+        this.setState({ user });
+        localStorage.setItem('user', JSON.stringify(user));
+    }*/ setUser(user) {
+        this.props.setUser(user);
         localStorage.setItem('user', JSON.stringify(user));
     }
     onLoggedIn(authData) {
@@ -25888,13 +25887,13 @@ class MainView extends _reactDefault.default.Component {
         return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             __source: {
                 fileName: "src/components/MainView/main-view.jsx",
-                lineNumber: 96
+                lineNumber: 99
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.BrowserRouter, {
                 __source: {
                     fileName: "src/components/MainView/main-view.jsx",
-                    lineNumber: 97
+                    lineNumber: 100
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
@@ -25905,7 +25904,7 @@ class MainView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/components/MainView/main-view.jsx",
-                        lineNumber: 98
+                        lineNumber: 101
                     },
                     __self: this,
                     children: [
@@ -25941,7 +25940,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/MainView/main-view.jsx",
-                                lineNumber: 100
+                                lineNumber: 103
                             },
                             __self: this
                         }),
@@ -25964,7 +25963,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/MainView/main-view.jsx",
-                                lineNumber: 120
+                                lineNumber: 123
                             },
                             __self: this
                         }),
@@ -25988,7 +25987,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/MainView/main-view.jsx",
-                                lineNumber: 127
+                                lineNumber: 130
                             },
                             __self: this
                         }),
@@ -26012,7 +26011,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/MainView/main-view.jsx",
-                                lineNumber: 134
+                                lineNumber: 137
                             },
                             __self: this
                         }),
@@ -26039,7 +26038,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/MainView/main-view.jsx",
-                                lineNumber: 142
+                                lineNumber: 145
                             },
                             __self: this
                         }),
@@ -26069,7 +26068,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/MainView/main-view.jsx",
-                                lineNumber: 149
+                                lineNumber: 152
                             },
                             __self: this
                         })
@@ -28328,14 +28327,7 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MovieView", ()=>MovieView
-) /*<Button
-                                    variant="outline-primary"
-                                    className="btn-outline-primary"
-                                    value={movie._id}
-                                    onClick={(e) => this.addFavFlix(e, movie)}
-                                >
-                                    Add to Favorites
-                                </Button>*/ ;
+);
 var _jsxRuntime = require("react/jsx-runtime");
 //Change movieview back to movie..
 var _react = require("react");

@@ -81,12 +81,5 @@ export class MovieView extends React.Component {
     }
 }
 
-/*<Button
-                                    variant="outline-primary"
-                                    className="btn-outline-primary"
-                                    value={movie._id}
-                                    onClick={(e) => this.addFavFlix(e, movie)}
-                                >
-                                    Add to Favorites
-                                </Button>*/
+
 

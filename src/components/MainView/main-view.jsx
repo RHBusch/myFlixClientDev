@@ -2,7 +2,6 @@ import React from 'react'; // Making React available to create components.
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Routes, Redirect, Link } from "react-router-dom";
 import { Link } from "react-router-dom";
-//import { MovieCard } from '../movie-card/movie-card';
 import PropTypes from 'prop-types'
 import { MovieView } from '../movie-view/movie-view';
 import { DirectorView } from '../director-view/director-view';
@@ -30,7 +29,6 @@ class MainView extends React.Component {    // The following code actually creat
     constructor() { // Constructor code is executed before render code - setting up the framework for the render. 
         super() //Calling React.Component 
         this.state = {
-            //movies: [],
             selectedMovie: null,
             user: null,
             register: 'false'
@@ -52,8 +50,13 @@ class MainView extends React.Component {    // The following code actually creat
         });
     }
 
-    setUser(user) {
+    /*setUser(user) {
         this.setState({ user });
+        localStorage.setItem('user', JSON.stringify(user));
+    }*/
+
+    setUser(user) {
+        this.props.setUser(user);
         localStorage.setItem('user', JSON.stringify(user));
     }
 
