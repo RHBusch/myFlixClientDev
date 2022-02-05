@@ -90,7 +90,8 @@ export function LoginView(props) {
 //Confirming data validity. 
 LoginView.propTypes = {
     User: PropTypes.shape({
-        Name: PropTypes.string.isRequired,
-        Description: PropTypes.string,
-    }).isRequired,
+        username: PropTypes.string.isRequired,
+        password: PropTypes.string.isRequired,
+    })
 };
+
