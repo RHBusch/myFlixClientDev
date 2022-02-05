@@ -170,7 +170,7 @@ class MainView extends React.Component {    // The following code actually creat
 
 
 let mapStateToProps = state => {
-    return { movies: state.movies }
+    return { movies: state.movies, user: state.user }
 }
 
 export default connect(mapStateToProps, { setMovies, setUser })(MainView);
