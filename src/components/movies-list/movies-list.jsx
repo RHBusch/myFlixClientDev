@@ -1,5 +1,5 @@
 import React from 'React';
-import Col from 'react-bootstrap/Col';
+import { Row, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 
 import { MovieCard } from '../movie-card/movie-card'
@@ -21,17 +21,21 @@ function MoviesList(props) {
 
 
     return <>
-        <Col md={12} style={{ margin: '1em' }}>
-            <VisibilityFilterInput visibilityFilter={visibilityFilter}
-            />
-        </Col>
-
-        {filteredMovies.map(m => (
-            <Col md={3} key={m._id}>
-                <MovieCard movies={m} />
+        <Row className="justify-content-center">
+            <Col md={12} style={{ margin: '1em' }}>
+                <VisibilityFilterInput visibilityFilter={visibilityFilter}
+                />
             </Col>
+        </Row>
 
-        ))}
+        <Row className="justify-content-center" >
+            {filteredMovies.map(m => (
+                <Col md={3} key={m._id}>
+                    <MovieCard movies={m} />
+                </Col>
+
+            ))}
+        </Row>
     </>
 }
 
