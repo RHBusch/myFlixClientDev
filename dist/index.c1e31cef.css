@@ -65,6 +65,7 @@
 .movieCardButton {
   color: black !important;
   background: #ff84eb !important;
+  width: 500 !important;
 }
 @import url("https://fonts.googleapis.com/css2?family=Fascinate&family=Limelight&display=swap");
 .main-view {

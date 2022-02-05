@@ -43537,7 +43537,10 @@ function MoviesList(props) {
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                    lg: 12,
                     md: 12,
+                    sm: 12,
+                    xs: 12,
                     style: {
                         margin: '1em'
                     },
@@ -43564,7 +43567,10 @@ function MoviesList(props) {
                 },
                 __self: this,
                 children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                        md: 3,
+                        lg: 3,
+                        md: 6,
+                        sm: 12,
+                        xs: 12,
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
                             lineNumber: 33
@@ -43617,6 +43623,7 @@ class MovieCard extends _reactDefault.default.Component {
     render() {
         const { movies  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
+            className: "movieCardStyle",
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
                 lineNumber: 15
