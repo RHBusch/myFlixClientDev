@@ -114,11 +114,6 @@ class MainView extends React.Component {    // The following code actually creat
 
                     }} />
 
-
-
-
-
-
                     <Route exact path="/register" render={() => {
                         if (user) return <Redirect to="/" />
                         return <Col>
