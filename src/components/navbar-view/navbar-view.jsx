@@ -32,7 +32,7 @@ export function NavBar({ user }) {
                             <Nav.Link href={`/users/${user}`} className="navText">{user}</Nav.Link>
                         )}
                         {isAuth() && (
-                            <Button variant="link" className="flixColor" onClick={() => { onLoggedOut() }}>Logout</Button>
+                            <Button variant="link" className="navText flixColor" onClick={() => { onLoggedOut() }}>Logout</Button>
                         )}
                         {!isAuth() && (
                             <Nav.Link href="/" className="navText">Sign-in</Nav.Link>

@@ -42783,7 +42783,7 @@ function NavBar({ user  }) {
                             }),
                             isAuth() && /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
                                 variant: "link",
-                                className: "flixColor",
+                                className: "navText flixColor",
                                 onClick: ()=>{
                                     onLoggedOut();
                                 },
