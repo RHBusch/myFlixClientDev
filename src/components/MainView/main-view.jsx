@@ -20,6 +20,7 @@ import './main-view.scss';
 import { ProfileView } from '../profile-view/profile-view';
 
 import { setMovies } from '../../actions/actions';
+import { setUser } from '../../actions/actions';
 
 import MoviesList from '../movies-list/movies-list';
 
@@ -50,15 +51,12 @@ class MainView extends React.Component {    // The following code actually creat
         });
     }
 
-    /*setUser(user) {
+    setUser(user) {
         this.setState({ user });
         localStorage.setItem('user', JSON.stringify(user));
-    }*/
-
-    setUser(user) {
-        this.props.setUser(user);
-        localStorage.setItem('user', JSON.stringify(user));
     }
+
+
 
     onLoggedIn(authData) {
         console.log(authData);
@@ -172,7 +170,7 @@ class MainView extends React.Component {    // The following code actually creat
 
 
 let mapStateToProps = state => {
-    return { movies: state.movies, user: state.user }
+    return { movies: state.movies }
 }
 
-export default connect(mapStateToProps, { setMovies })(MainView);
+export default connect(mapStateToProps, { setMovies, setUser })(MainView);
