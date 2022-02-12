@@ -45,3 +45,5 @@ Profile view
 ### Execution: 
 
 parcel src/index.html ---> "Server running at http://localhost:1234
+
+https://www.npmjs.com/package/parcel
