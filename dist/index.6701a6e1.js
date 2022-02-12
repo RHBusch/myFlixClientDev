@@ -42730,7 +42730,7 @@ function NavBar({ user  }) {
                             children: "my"
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                            class: "flixColor",
+                            className: "flixColor",
                             __source: {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
                                 lineNumber: 26

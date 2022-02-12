@@ -23,7 +23,7 @@ export function NavBar({ user }) {
         <Navbar fixed="top" bg="dark" variant="dark" className="mainNavigation" expand="lg">
             <Container>
                 <Navbar.Brand className="navText" href="/">
-                    <span>my</span><span class="flixColor">Flix</span><span>App</span>
+                    <span>my</span><span className="flixColor">Flix</span><span>App</span>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
